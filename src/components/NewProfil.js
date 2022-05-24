@@ -28,7 +28,7 @@ export const NewProfil = () => {
         }
     })();
 
-    const post = useAxiosPost(`/${resRole}/add-profil`, body, token, tokenExp, `/dashboard-${resRole}`)
+    const post = useAxiosPost(`${resRole}/add-profil`, body, token, tokenExp, `/dashboard-${resRole}`)
 
     return (
 

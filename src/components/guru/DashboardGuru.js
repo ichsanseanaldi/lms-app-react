@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 export const DashboardGuru = () => {
 
   const [username, token, tokenExp, resRole] = useRefresh('guru');
-  const profil = useAxiosGetSingle('/guru/get-profil', token, tokenExp);
-  const course = useAxiosGetAll(`/course/get-course`, token, tokenExp);
+  const profil = useAxiosGetSingle('guru/get-profil', token, tokenExp);
+  const course = useAxiosGetAll(`course/get-course`, token, tokenExp);
 
   const logout = useLogout();
 

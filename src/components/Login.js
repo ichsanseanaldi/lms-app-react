@@ -21,7 +21,7 @@ export const Login = () => {
 
         try {
 
-            const res = await axiosInstance.post('/auth/login', {
+            const res = await axiosInstance.post('auth/login', {
                 username: username,
                 password: password
             })

@@ -10,7 +10,7 @@ export const useLogout = () => {
 
         try {
 
-            await axiosInstance.delete('/auth/logout');
+            await axiosInstance.delete('auth/logout');
 
             navigate('/');
 

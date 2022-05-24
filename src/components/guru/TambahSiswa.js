@@ -9,7 +9,7 @@ export const TambahSiswa = () => {
 
     const [x, token, tokenExp, resRole] = useRefresh('guru');
 
-    const post = useAxiosPost('/guru/add-akun-siswa', {
+    const post = useAxiosPost('guru/add-akun-siswa', {
         username: usernameRegister,
         password: passwordRegister
     }, token, tokenExp, `/dashboard-${resRole}`);

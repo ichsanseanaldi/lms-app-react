@@ -10,7 +10,7 @@ export const Register = () => {
 
     const [username, token, tokenExp, resRole] = useRefresh('admin');
 
-    const post = useAxiosPost('/admin/register-akun', {
+    const post = useAxiosPost('admin/register-akun', {
         username: usernameRegister,
         password: passwordRegister
     }, token, tokenExp, `/dashboard-${resRole}`);

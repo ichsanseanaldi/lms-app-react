@@ -9,7 +9,7 @@ export const TambahCourse = () => {
     const [deskripsiCourse, setDeskripsiCourse] = useState('');
 
     const [x, token, tokenExp, resRole] = useRefresh('guru');
-    const profil = useAxiosGetSingle('/guru/get-profil', token, tokenExp)
+    const profil = useAxiosGetSingle('guru/get-profil', token, tokenExp)
 
     const randomCode = (() => {
 
@@ -18,7 +18,7 @@ export const TambahCourse = () => {
         return date;
     })();
 
-    const post = useAxiosPost('/guru/add-course', {
+    const post = useAxiosPost('guru/add-course', {
         codeCourse: randomCode,
         judulCourse: judulCourse,
         deskripsiCourse: deskripsiCourse,

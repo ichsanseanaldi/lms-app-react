@@ -18,7 +18,7 @@ export const CourseExercise = () => {
     const { code_exercise } = useAxiosGetSingle(`course/get-course-exercise-id/${id}`, token, tokenExp)
 
 
-    const post = useAxiosPost('/course/verify-answer', {
+    const post = useAxiosPost('course/verify-answer', {
         jawaban: optionKey,
         idexercise: id
     }, token, tokenExp, `/dashboard-${resRole}`);

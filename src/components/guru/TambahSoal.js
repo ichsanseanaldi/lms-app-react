@@ -20,7 +20,7 @@ export const TambahSoal = () => {
     const [x, token, tokenExp, resRole] = useRefresh('guru');
     const exercise = useAxiosGetSingle(`course/get-course-exercise/${randomcode}`, token, tokenExp);
 
-    const post = useAxiosPost('/guru/add-exercise-soal', {
+    const post = useAxiosPost('guru/add-exercise-soal', {
         nomorSoal: nomorSoal,
         pertanyaanSoal: pertanyaanSoal,
         optionA: optionA,

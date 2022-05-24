@@ -12,7 +12,7 @@ export const TambahMateri = () => {
     const [isiMateri, setIsiMateri] = useState('');
     const [pointMateri, setPointMateri] = useState('');
     const [x, token, tokenExp, resRole] = useRefresh('guru');
-    const post = useAxiosPost('/guru/add-materi', {
+    const post = useAxiosPost('guru/add-materi', {
         judulMateri: judulMateri,
         isiMateri: isiMateri,
         pointMateri: pointMateri,

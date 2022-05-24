@@ -13,11 +13,11 @@ export const CourseMateri = () => {
     const role = localStorage.getItem('role');
 
     const [username, token, tokenExp, resRole] = useRefresh(role);
-    const res = useAxiosGetSingle(`/course/get-course-materi-detail/${id}`, token, tokenExp);
+    const res = useAxiosGetSingle(`course/get-course-materi-detail/${id}`, token, tokenExp);
 
     const { materi, joint } = res;
 
-    const post = useAxiosPost(`/course/verify-materi`, {
+    const post = useAxiosPost(`course/verify-materi`, {
         idmateri: materi && materi.id_materi,
         pointmateri: materi && materi.point_materi
     }, token, tokenExp, `/dashboard-${resRole}`)

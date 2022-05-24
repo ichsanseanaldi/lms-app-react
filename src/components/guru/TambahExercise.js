@@ -17,7 +17,7 @@ export const TambahExercise = () => {
         return date;
     })();
 
-    const post = useAxiosPost('/guru/add-exercise', {
+    const post = useAxiosPost('guru/add-exercise', {
         codeExercise: randomCode,
         judulExercise: judulExercise,
         idcourse: id
