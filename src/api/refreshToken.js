@@ -6,7 +6,7 @@ export const refreshToken = async () => {
 
     try {
 
-        const { data } = await axiosInstance.get('/auth/refresh');
+        const { data } = await axiosInstance.get('auth/refresh');
 
         const decoded = jwt_decode(data.accessToken);
 

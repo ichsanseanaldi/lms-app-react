@@ -8,8 +8,8 @@ import { useRefresh } from '../../hooks/useRefresh';
 
 export const DashboardAdmin = () => {
 
-    const [username, token, tokenExp] = useRefresh('admin');
-    const akun = useAxiosGetAll('/admin/get-akun-guru', token, tokenExp);
+    const [username, token, tokenExp, resRole] = useRefresh('admin');
+    const akun = useAxiosGetAll('admin/get-akun-guru', token, tokenExp);
 
     const logout = useLogout();
 
