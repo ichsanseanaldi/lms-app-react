@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useRefresh } from '../../hooks/useRefresh';
-import { useAxiosPost } from '../../hooks/useAxiosPost';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addAkunThunk } from '../../redux/admin/thunk';
 
 
 export const Register = () => {
@@ -8,12 +10,23 @@ export const Register = () => {
     const [usernameRegister, setUsername] = useState('');
     const [passwordRegister, setPassword] = useState('');
 
-    const [username, token, tokenExp, resRole] = useRefresh('admin');
+    const [token, tokenExp, resRole] = useRefresh('admin');
 
-    const post = useAxiosPost('admin/register-akun', {
-        username: usernameRegister,
-        password: passwordRegister
-    }, token, tokenExp, `/dashboard-${resRole}`);
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+
+    const post = (e) => {
+
+        e.preventDefault();
+
+        dispatch(addAkunThunk({
+            username: usernameRegister,
+            password: passwordRegister
+        }, token, tokenExp))
+
+        navigate('/dashboard-admin');
+    }
 
     return (
 

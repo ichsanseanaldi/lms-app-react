@@ -28,7 +28,6 @@ export const Login = () => {
 
             const decode = jwtDecode(res.data.accessToken);
 
-            // console.log(decode);
             localStorage.setItem('role', decode.role);
 
             if (decode.isNew === 'no') {

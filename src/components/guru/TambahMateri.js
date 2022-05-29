@@ -1,30 +1,35 @@
-import React, { useState, useMemo, useRef } from 'react';
-import { useAxiosPost } from '../../hooks/useAxiosPost';
+import React, { useState, useRef } from 'react';
 import { useRefresh } from '../../hooks/useRefresh';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Editor } from '@tinymce/tinymce-react';
+import { addMateriThunk } from '../../redux/user/thunk';
 
 export const TambahMateri = () => {
 
     const { id } = useParams();
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [judulMateri, setJudulMateri] = useState('');
     const [isiMateri, setIsiMateri] = useState('');
     const [pointMateri, setPointMateri] = useState('');
-    const [x, token, tokenExp, resRole] = useRefresh('guru');
-    const post = useAxiosPost('guru/add-materi', {
+    const [token, tokenExp] = useRefresh('guru');
+
+    const body = {
         judulMateri: judulMateri,
         isiMateri: isiMateri,
         pointMateri: pointMateri,
         idCourse: id
-    }, token, tokenExp, `/dashboard-${resRole}`)
+    }
+
+    const post = (e) => {
+        e.preventDefault();
+        dispatch(addMateriThunk(body, token, tokenExp))
+        navigate(`/dashboard-guru`, { replace: true })
+    }
 
     const editorRef = useRef(null);
-    const log = () => {
-        if (editorRef.current) {
-            setIsiMateri(editorRef.current.getContent());
-        }
-    };
 
     return (
         <>
@@ -35,6 +40,7 @@ export const TambahMateri = () => {
                 <Editor
                     apiKey='0xan1y7lhv54pk6jsw0mf25rrffc5kgl23mkqfi1g2v79vbm'
                     onInit={(evt, editor) => editorRef.current = editor}
+                    onChange={() => setIsiMateri(editorRef.current.getContent())}
                     init={{
                         width: 500,
                         height: 500,

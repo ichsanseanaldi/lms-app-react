@@ -1,45 +1,35 @@
 import React, { useState } from 'react'
-
-import { axiosInstanceIntercept } from '../../api/axiosInstance';
-
-import { useAxiosPost } from '../../hooks/useAxiosPost';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useRefresh } from '../../hooks/useRefresh';
-
+import { getCourseByCodeThunk, joinCourseThunk } from '../../redux/user/thunk';
 
 export const CariCourse = () => {
 
     const [code, setCode] = useState('')
-    const [course, setCourse] = useState('')
-    const [username, token, tokenExp, resRole] = useRefresh('siswa');
+    const [token, tokenExp] = useRefresh('siswa');
+
+    const course = useSelector(state => state.user.course);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const { coursedetail, joint, materi, exercise } = course;
 
-    // const course = useAxiosGetSingle(`course/get-course-detail-code/${code}`, token, tokenExp);
-    const post = useAxiosPost(`course/join`, {
-        idcourse: coursedetail && coursedetail.id_course
-    }, token, tokenExp, `/dashboard-${resRole}`);
-
-    const get = (e) => {
-
-        e.preventDefault();
-
-        axiosInstanceIntercept.get(`course/get-course-detail-code/${code}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-            tokenExp: tokenExp
-        })
-            .then(res => {
-
-                setCourse(res.data)
-
-            })
-            .catch(err => console.log(err))
-    }
-
-
     console.log(course);
 
+    const body = {
+        idcourse: coursedetail && coursedetail.id_course
+    }
+
+    const post = () => {
+        dispatch(joinCourseThunk(body, token, tokenExp));
+        navigate('/dashboard-siswa', { replace: true });
+    }
+
+    const get = (e) => {
+        e.preventDefault();
+        dispatch(getCourseByCodeThunk(token, tokenExp, code));
+    }
 
     return (
         <>
@@ -49,7 +39,7 @@ export const CariCourse = () => {
                 <button type="submit">submit</button>
             </form>
             <div>
-                {course &&
+                {course[0] !== '' && coursedetail &&
                     <div>
                         <h1>{coursedetail.code_course}</h1>
                         <h1>{coursedetail.judul_course}</h1>

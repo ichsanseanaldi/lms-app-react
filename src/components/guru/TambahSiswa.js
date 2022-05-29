@@ -1,18 +1,29 @@
 import React, { useState } from 'react'
 import { useRefresh } from '../../hooks/useRefresh';
-import { useAxiosPost } from '../../hooks/useAxiosPost';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addSiswaThunk } from '../../redux/user/thunk';
 
 export const TambahSiswa = () => {
 
     const [usernameRegister, setUsername] = useState('');
     const [passwordRegister, setPassword] = useState('');
 
-    const [x, token, tokenExp, resRole] = useRefresh('guru');
+    const [token, tokenExp] = useRefresh('guru');
 
-    const post = useAxiosPost('guru/add-akun-siswa', {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const body = {
         username: usernameRegister,
         password: passwordRegister
-    }, token, tokenExp, `/dashboard-${resRole}`);
+    }
+
+    const post = (e) => {
+        e.preventDefault();
+        dispatch(addSiswaThunk(body, token, tokenExp))
+        navigate(`/dashboard-guru`, { replace: true })
+    }
 
     return (
         <div>

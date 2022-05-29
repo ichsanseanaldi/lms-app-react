@@ -1,30 +1,40 @@
 import React, { useState } from 'react'
-import useAxiosGetSingle from '../../hooks/useAxiosGetSingle';
 import { useRefresh } from '../../hooks/useRefresh';
-import { useAxiosPost } from '../../hooks/useAxiosPost';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addCourseThunk } from '../../redux/user/thunk';
 
 export const TambahCourse = () => {
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [judulCourse, setJudulCourse] = useState('');
     const [deskripsiCourse, setDeskripsiCourse] = useState('');
 
-    const [x, token, tokenExp, resRole] = useRefresh('guru');
-    const profil = useAxiosGetSingle('guru/get-profil', token, tokenExp)
+    const [token, tokenExp] = useRefresh('guru');
+    const id_profil = useSelector(state => state.user.profil.id_profil_guru)
 
     const randomCode = (() => {
 
         const date = new Date().getTime().toString().substring(8);
 
         return date;
+
     })();
 
-    const post = useAxiosPost('guru/add-course', {
+    const body = {
         codeCourse: randomCode,
         judulCourse: judulCourse,
         deskripsiCourse: deskripsiCourse,
-        idProfil: profil.id_profil_guru
-    }, token, tokenExp, `/dashboard-${resRole}`);
+        idProfil: id_profil
+    }
 
+    const post = (e) => {
+        e.preventDefault();
+        dispatch(addCourseThunk(body, token, tokenExp))
+        navigate('/dashboard-guru', { replace: true });
+    }
 
     return (
         <div>

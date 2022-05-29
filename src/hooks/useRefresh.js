@@ -4,7 +4,6 @@ import { refreshToken } from '../api/refreshToken';
 
 export const useRefresh = (role) => {
 
-    const [username, setUsername] = useState('');
     const [token, setToken] = useState('')
     const [tokenExp, setTokenExp] = useState('');
     const [resRole, setResRole] = useState('');
@@ -16,7 +15,6 @@ export const useRefresh = (role) => {
         refreshToken()
             .then(res => {
                 setToken(res[0].accessToken);
-                setUsername(res[1].username);
                 setTokenExp(res[1].exp);
                 setResRole(res[1].role);
                 if (res[1].role !== role) navigate('/');
@@ -25,9 +23,7 @@ export const useRefresh = (role) => {
                 navigate('/');
             })
 
-
-
     })
 
-    return [username, token, tokenExp, resRole]
+    return [token, tokenExp, resRole]
 }

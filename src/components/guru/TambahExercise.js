@@ -1,28 +1,34 @@
 import React, { useState } from 'react'
 import { useRefresh } from '../../hooks/useRefresh';
-import { useAxiosPost } from '../../hooks/useAxiosPost';
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { addExerciseThunk } from '../../redux/user/thunk';
 
 export const TambahExercise = () => {
 
     const { id } = useParams();
-    const [judulExercise, setJudulExercise] = useState('');
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const [x, token, tokenExp, resRole] = useRefresh('guru');
+    const [judulExercise, setJudulExercise] = useState('');
+    const [token, tokenExp] = useRefresh('guru');
 
     const randomCode = (() => {
-
         const date = new Date().getTime().toString().substring(8);
-
         return date;
     })();
 
-    const post = useAxiosPost('guru/add-exercise', {
+    const body = {
         codeExercise: randomCode,
         judulExercise: judulExercise,
         idcourse: id
-    }, token, tokenExp, `/add-soal/${randomCode}`);
+    }
 
+    const post = (e) => {
+        e.preventDefault();
+        dispatch(addExerciseThunk(body, token, tokenExp))
+        navigate(`/add-soal/${randomCode}`, { replace: true });
+    }
 
     return (
         <div>

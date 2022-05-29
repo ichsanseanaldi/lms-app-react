@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
-import { useAxiosPost } from '../hooks/useAxiosPost';
 import { useRefresh } from '../hooks/useRefresh';
+import { useDispatch } from 'react-redux';
+import { addProfilThunk } from '../redux/user/thunk';
+import { useNavigate } from 'react-router-dom';
+
 
 export const NewProfil = () => {
 
     const role = localStorage.getItem('role');
 
-    const [x, token, tokenExp, resRole] = useRefresh(role);
+    const [token, tokenExp, resRole] = useRefresh(role);
 
     const [nip, setNip] = useState('');
     const [namaGuru, setNamaGuru] = useState('');
 
     const [namaSiswa, setNamaSiswa] = useState('');
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const body = (() => {
 
@@ -28,7 +34,13 @@ export const NewProfil = () => {
         }
     })();
 
-    const post = useAxiosPost(`${resRole}/add-profil`, body, token, tokenExp, `/dashboard-${resRole}`)
+    const post = () => {
+
+        dispatch(addProfilThunk(body, token, tokenExp, resRole));
+
+        navigate(`/dashboard-${resRole}`, { replace: true });
+
+    }
 
     return (
 

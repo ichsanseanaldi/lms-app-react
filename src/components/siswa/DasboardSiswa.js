@@ -1,30 +1,40 @@
-import React from 'react'
-import useAxiosGetAll from '../../hooks/useAxiosGetAll';
-import useAxiosGetSingle from '../../hooks/useAxiosGetSingle';
+import React, { useEffect } from 'react'
 import { useRefresh } from '../../hooks/useRefresh';
 import { useLogout } from '../../hooks/useLogout';
 import { Link } from 'react-router-dom';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { getProfilThunk, getCourseThunk, getBadgesThunk } from '../../redux/user/thunk';
 
 export const DashboardSiswa = () => {
 
-    const [username, token, tokenExp, resRole] = useRefresh('siswa');
-    const profil = useAxiosGetSingle('/siswa/get-profil', token, tokenExp);
-    const course = useAxiosGetAll(`/course/get-course`, token, tokenExp);
-    const badges = useAxiosGetAll(`siswa/get-badges`, token, tokenExp)
-
     const logout = useLogout();
+    const dispatch = useDispatch()
 
-    console.log(badges);
+    const [token, tokenExp] = useRefresh('siswa');
+    const profil = useSelector(state => state.user.profil);
+    const course = useSelector(state => state.user.course);
+    const badges = useSelector(state => state.user.badges);
+
+    useEffect(() => {
+        dispatch(getProfilThunk(token, tokenExp, 'siswa'));
+        dispatch(getCourseThunk(token, tokenExp));
+        dispatch(getBadgesThunk(token, tokenExp));
+    }, [dispatch])
+
+    console.log(course);
 
     return (
         <>
             <div>Dashboard Siswa</div>
-            <p>Hello {profil.nama_siswa} !</p>
-            <p>level : {profil.level_siswa}</p>
-            <p>point : {profil.point_siswa}</p>
-            <p>materi : {profil.materi_finished}</p>
-            <p>exercise : {profil.exercise_finished}</p>
+            {profil !== null &&
+                <div>
+                    <p>Hello {profil.nama_siswa} !</p>
+                    <p>level : {profil.level_siswa}</p>
+                    <p>point : {profil.point_siswa}</p>
+                    <p>materi : {profil.materi_finished}</p>
+                    <p>exercise : {profil.exercise_finished}</p>
+                </div>
+            }
             <div>
                 <p>Badges : </p>
                 {badges.length > 0 && badges.map(e => {
@@ -36,25 +46,26 @@ export const DashboardSiswa = () => {
                 })}
 
             </div>
-
             <button onClick={logout}>Logout</button>
             <p>-------------------------------</p>
             <div>
-                <h2>daftar course</h2>
-                {course.length === 0 &&
-                    <>
-                        <h1>No Course Joined</h1>
-                    </>
-                }
-                {course && course.map(({ course }) => {
-                    return (
-                        <div key={course.id_course}>
-                            <h3>{course.judul_course}</h3>
-                            <p>{course.deskripsi_course}</p>
-                            <Link to={`/course-detail/${course.id_course}`}>Course Detail.. </Link>
-                        </div>
-                    )
-                })}
+                <div>
+                    <div>Course Lists - siswa </div>
+                    <p>-------------------------------</p>
+                    <div>
+                        {course[0] === '' && <h1>No Course</h1>}
+                        {course[0] !== undefined && course[0].course !== undefined && course.map(e => {
+                            return (
+                                <div key={e.course.id_course}>
+                                    <h3> {e.course.judul_course}</h3>
+                                    <p>{e.course.deskripsi_course}</p>
+                                    <Link to={`/course-detail-siswa/${e.course.id_course}`}>Course Detail.. </Link>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <p>-------------------------------</p>
+                </div>
                 <Link to={`/search-course`}>Join Course</Link>
             </div>
         </>
