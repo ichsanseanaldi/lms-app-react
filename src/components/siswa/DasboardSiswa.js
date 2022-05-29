@@ -21,8 +21,6 @@ export const DashboardSiswa = () => {
         dispatch(getBadgesThunk(token, tokenExp));
     }, [dispatch])
 
-    console.log(course);
-
     return (
         <>
             <div>Dashboard Siswa</div>

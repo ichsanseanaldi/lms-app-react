@@ -21,8 +21,6 @@ export const CourseDetailSiswa = () => {
         dispatch(getCourseExerciseThunk(token, tokenExp, id))
     }, [dispatch])
 
-    console.log(materi);
-
     return (
         <div>
             <div>CourseDetail id : {id}</div>

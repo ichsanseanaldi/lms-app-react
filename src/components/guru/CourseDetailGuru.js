@@ -21,8 +21,6 @@ export const CourseDetailGuru = () => {
         dispatch(getCourseExerciseThunk(token, tokenExp, id))
     }, [dispatch])
 
-    console.log(materi, detail, materi);
-
     return (
         <div>
             <div>CourseDetail id : {id}</div>

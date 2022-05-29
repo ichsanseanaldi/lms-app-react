@@ -15,8 +15,6 @@ export const CariCourse = () => {
 
     const { coursedetail, joint, materi, exercise } = course;
 
-    console.log(course);
-
     const body = {
         idcourse: coursedetail && coursedetail.id_course
     }

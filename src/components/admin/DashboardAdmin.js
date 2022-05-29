@@ -18,9 +18,6 @@ export const DashboardAdmin = () => {
         dispatch(getAkunThunk(token, tokenExp))
     }, [dispatch])
 
-    console.log(akun);
-
-
     return (
         <>
             <div>Dashboard Admin</div>

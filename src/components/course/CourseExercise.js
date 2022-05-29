@@ -47,8 +47,6 @@ export const CourseExercise = () => {
 
     }
 
-    console.log('soal:', soal, 'body:', body);
-
     return (
         <div>
             <div>Course Exercise : {id}</div>
