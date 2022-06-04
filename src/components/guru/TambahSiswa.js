@@ -39,7 +39,6 @@ export const TambahSiswa = () => {
         setPassword(e.target.value)
     }
 
-
     return (
         <StyledContainer flex="flex">
             <NavBarGuru />

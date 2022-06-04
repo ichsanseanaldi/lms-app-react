@@ -23,8 +23,6 @@ export const CourseExerciseGuru = () => {
     const soalstate = useSelector(state => state.user.soal)
     const soal = soalstate.filter(e => e.id_exercise == id);
 
-    console.log(soal);
-
     useEffect(() => {
         dispatch(getCourseExerciseSoalThunk(token, tokenExp, id))
     }, [dispatch])

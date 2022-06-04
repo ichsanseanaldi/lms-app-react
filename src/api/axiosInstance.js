@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const option = {
     withCredentials: true,
-    // credentials: 'include',
-    baseURL: 'http://localhost:5000/'
+    credentials: 'include',
+    baseURL: 'https://lms-app-heroku.herokuapp.com/'
 }
 
 export const axiosInstance = axios.create(option)

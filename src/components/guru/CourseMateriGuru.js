@@ -16,8 +16,6 @@ export const CourseMateriGuru = () => {
     const materistore = useSelector(state => state.user.materi)
     const materidetail = materistore.filter(e => e.id_materi == id)
 
-    console.log(materidetail);
-
     return (
         <StyledContainer flex="flex">
             <NavBarGuru />
