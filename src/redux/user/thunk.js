@@ -1,20 +1,17 @@
 import { axiosInstanceIntercept } from "../../api/axiosInstance";
 import {
     getProfil,
-    getAkunSiswa,
     getBadges,
     getCourse,
     getCourseExercise,
     getCourseMateri,
     getCourseExerciseSoal,
-    getCourseDetail,
-    getCourseMateriDetail,
+    getAllSiswa,
     addProfil,
     addCourse,
     addCourseMateri,
     addCourseExercise,
-    addCourseExerciseSoal,
-    getAllSiswa
+    addCourseExerciseSoal
 } from "./actionCreator";
 
 
@@ -200,8 +197,6 @@ export function getCourseMateriThunk(token, tokenExp, id) {
 
     return async dispatch => {
 
-        console.log(id);
-
         try {
             const res = await axiosInstanceIntercept.get(`course/get-course-materi/${id}`, config(token, tokenExp))
             dispatch(getCourseMateri(res.data))
@@ -249,8 +244,8 @@ export function verifyMateriThunk(body, token, tokenExp) {
 
         try {
 
-            await axiosInstanceIntercept.post(`course/verify-materi`, body, config(token, tokenExp))
-
+            const res = await axiosInstanceIntercept.post(`course/verify-materi`, body, config(token, tokenExp))
+            return res;
         } catch (error) {
             console.log(error);
         }
@@ -264,11 +259,8 @@ export function verifyAnswerThunk(body, token, tokenExp) {
     return async dispatch => {
 
         try {
-
-            console.log(body);
-
-            await axiosInstanceIntercept.post(`course/verify-answer`, body, config(token, tokenExp))
-
+            const res = await axiosInstanceIntercept.post(`course/verify-answer`, body, config(token, tokenExp));
+            return res
         } catch (error) {
             console.log(error);
         }
@@ -279,12 +271,11 @@ export function verifyAnswerThunk(body, token, tokenExp) {
 
 export function joinCourseThunk(body, token, tokenExp) {
 
-    return async dispatch => {
+    return async () => {
 
         try {
 
-            const res = await axiosInstanceIntercept.post(`course/join`, body, config(token, tokenExp))
-            console.log(res);
+            await axiosInstanceIntercept.post(`course/join`, body, config(token, tokenExp))
 
         } catch (error) {
             console.log(error);

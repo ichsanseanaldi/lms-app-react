@@ -17,7 +17,6 @@ export function getAkunThunk(token, tokenExp) {
 
         try {
             const res = await axiosInstanceIntercept.get('admin/get-akun', config(token, tokenExp))
-            console.log(res);
             dispatch(getAkun(res.data))
         } catch (error) {
             console.log(error);

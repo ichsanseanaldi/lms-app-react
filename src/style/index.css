@@ -1,0 +1,338 @@
+.caveat{
+    font-family: 'caveat';
+}
+
+.p-10-all{
+    padding: 10px;
+}
+
+.p-15-all{
+    padding: 15px;
+}
+
+.p-20-all{
+    padding: 20px;
+}
+
+.p-20-ub{
+    padding: 20px 0;
+}
+
+.p-b-50{
+    padding-bottom: 40px;
+}
+
+.p-10-lr{
+    padding: 0 10px;
+}
+
+.p-20-lr{
+    padding: 0 20px;
+}
+
+.p-50-lr{
+    padding: 0 50px;
+}
+
+.m-all-20{
+    margin: 20px;
+}
+
+.m-all-10{
+    margin: 10px;
+}
+
+.fixed-size{
+    width: 200px;
+    height: 200px;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+
+.m-b-10{
+    margin-bottom: 10px;
+}
+
+.m-t-20{
+    margin-top: 20px;
+}
+
+.m-t-30{
+    margin-top: 30px;
+}
+
+.m-t-50{
+    margin-top: 50px;
+}
+
+.m-b-20{
+    margin-bottom: 20px;
+}
+
+.m-lr-10{
+    margin: 0 10px;
+}
+
+.m-lr-20{
+    margin: 0 20px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+    flex:1;
+}
+
+.flex-only{
+    display: flex;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-start{
+    justify-content: center;
+    align-items: start;
+}
+
+.flex-center-end{
+    justify-content: center;
+    align-items: end;
+}
+
+.flex-center-between-rev{
+    justify-content: space-between;
+    align-items:center;
+}
+
+.flex-center-around-rev{
+    justify-content: space-around;
+    align-items:center;
+}
+
+.flex-j-end{
+    justify-content: end;
+}
+
+.flex-j-between{
+    justify-content: space-between;
+}
+
+.link-nav{
+    padding: 10px;
+}
+
+.brand,.form-header{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.card-header{
+    font-size: 1.3rem;
+}
+
+.svg-img{
+    object-fit: cover;
+}
+
+.w-h-100{
+    width: 100%;
+    height: 100%;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.w-90{
+    width: 90%;
+}
+
+.w-95{
+    width: 95%;
+}
+
+.w-50{
+    width: 50%;
+}
+
+.w-h-50{
+    width: 50%;
+    height: 50%;
+}
+
+.font-smaller{
+    font-size: 0.9em;
+}
+
+.b-card{
+    transition: 0.5s;
+    transform: scale(0.8);
+    cursor:pointer ;
+}
+
+
+
+.b-card:hover{
+    transform: scale(1) rotate(3deg);
+}
+
+.src-btn{
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #1DCDFF;
+    color:#E8F0F9;
+    width: 50%;
+    border-radius: 5px;
+    font-weight:500;
+    font-family:inherit ;
+}
+
+.border-top{
+    border-top: 1px solid black;
+}
+
+.bordered{
+    border:1px solid #d7d7d7;
+}
+
+.border-round{
+    border-radius: 10px;
+}
+
+.relative{
+    position: relative;
+}
+
+.fixed{
+    position:fixed;
+    z-index: 999;
+}
+
+.full{
+   inset: 0;
+}
+
+.card-btn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.rotate-90{
+    margin: 0 10px 5px;
+    transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+}
+
+.o-hide{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.o-auto{
+    overflow: auto;
+}
+
+.bg-modal{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.b-r{
+    border-left: 3px solid #D9D9D9;
+}
+
+.red{
+    color: #FF2E63;
+}
+
+.bg-prime{
+    color: white;
+    background-color: #202020;
+}
+
+.bg-y{
+    background-color: #FFC700;
+}
+
+.bg-w{
+    background-color: white;
+}
+
+.bg-m{
+    background-color: magenta;
+}
+
+.bg-t{
+    background-color: turquoise;
+}
+
+.bg-f{
+    background-color: forestgreen;
+}
+
+.bg-r{
+    background-color: rosybrown;
+}
+
+.rotate-anim-hov{
+    transition: 0.5s;
+}
+
+a:hover .rotate-anim-hov{
+    transform: rotate(360deg);
+}
+
+.leader-anim{
+    animation: leaderAnims 1s linear 0s 1 normal forwards;
+}
+
+@keyframes leaderAnims {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}

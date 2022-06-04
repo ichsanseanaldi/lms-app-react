@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useRefresh } from '../../hooks/useRefresh'
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCourseExerciseThunk, getCourseMateriThunk } from '../../redux/user/thunk';
+import { StyledContainer } from '../../style/components/StyledContainer';
+import { StyledWrapper } from '../../style/components/StyledWrapper';
+import { StyledHeading } from '../../style/components/StyledHeading';
+import { yellow } from '../../style/ColorVariable';
+import { TableSiswa } from '../partials/TableSiswa';
+import { NavBarSiswa } from '../partials/NavBarSiswa';
 
 export const CourseDetailSiswa = () => {
 
@@ -13,60 +18,66 @@ export const CourseDetailSiswa = () => {
     const [token, tokenExp] = useRefresh('siswa');
     const course = useSelector(state => state.user.course);
     const exercise = useSelector(state => state.user.exercise);
-    const detail = course.filter(e => e.id_course == id);
     const materi = useSelector(state => state.user.materi);
+    const detail = course.filter(e => e.id_course == id);
 
     useEffect(() => {
+
         dispatch(getCourseMateriThunk(token, tokenExp, id))
         dispatch(getCourseExerciseThunk(token, tokenExp, id))
+
     }, [dispatch])
 
+
     return (
-        <div>
-            <div>CourseDetail id : {id}</div>
-            <div>
-                <h4>Detail course Siswa</h4>
-                {detail && detail.map((e) => {
-                    return (
-                        <div key={e.course.id_course}>
-                            <p>{e.course.id_course}</p>
-                            <p>{e.course.code_course}</p>
-                            <p>{e.course.judul_course}</p>
-                            <p>{e.course.deskripsi_course}</p>
+
+        <StyledContainer flex="flex">
+            <NavBarSiswa />
+            <StyledWrapper>
+                <StyledHeading backgroundcolor={yellow}>
+                    Detail Course Siswa
+                </StyledHeading>
+                <div className='flex'>
+                    {detail && detail.map((e) => {
+                        return (
+                            <div key={e.course.id_course}>
+                                <div className='flex p-10-all'>
+                                    <h2>Judul:</h2>
+                                    <p className='brand p-10-lr' >{e.course.judul_course}</p>
+                                </div>
+                                <div className='flex p-10-all'>
+                                    <h2>Code:</h2>
+                                    <p className='brand p-10-lr'>{e.course.code_course}</p>
+                                </div>
+                                <div className='flex p-10-all'>
+                                    <h2>Deskripsi:</h2>
+                                    <p className='brand p-10-lr'>{e.course.deskripsi_course}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
+                {materi !== undefined && exercise !== undefined &&
+                    <div>
+                        <div className='flex flex-column '>
+                            <TableSiswa
+                                id={id}
+                                title="Materi"
+                                value={materi}
+                            />
                         </div>
-                    )
-                })
+                        <div className='flex flex-column'>
+                            <TableSiswa
+                                id={id}
+                                title="Exercise"
+                                value={exercise}
+                            />
+                        </div>
+                    </div>
                 }
-            </div>
-            <p>------------------------------</p>
-            <div>
-                <h4>Materi Course</h4>
-                {materi.length > 0 && materi.map(e => {
-                    return (
-                        <div key={e.course_materi.id_materi}>
-                            <p>{e.course_materi.id_materi}</p>
-                            <p>{e.course_materi.judul_materi}</p>
-                            <p>{e.course_materi.point_materi}</p>
-                            <Link to={`/course-materi/${e.course_materi.id_materi}`}>Materi Detail.. </Link>
-                        </div>
-                    )
-
-                })}
-            </div>
-            <p>------------------------------</p>
-            <div>
-                <h4>Exercise Course</h4>
-                {exercise.length > 0 && exercise.map(e => {
-                    return (
-                        <div key={e.id_joint_exercise}>
-                            <p>{e.course_exercise.judul_exercise}</p>
-                            {e.isFinished === 'false' ? <Link to={`/course-exercise/${e.id_exercise}`}>Exercise Detail.. </Link> : <p>Exercise telah diselesaikan</p>}
-                        </div>
-                    )
-                })}
-            </div>
-
-        </div>
+            </StyledWrapper>
+        </StyledContainer>
 
 
     )

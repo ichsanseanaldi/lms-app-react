@@ -23,7 +23,7 @@ export const useRefresh = (role) => {
                 navigate('/');
             })
 
-    })
+    }, [])
 
     return [token, tokenExp, resRole]
 }

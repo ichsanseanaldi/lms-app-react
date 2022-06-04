@@ -4,10 +4,11 @@ import { axiosInstanceIntercept } from '../api/axiosInstance';
 
 const useAxiosGetSingle = (url, token, tokenExp) => {
 
-    const [data, setData] = useState('');
+    const [data, setData] = useState(null);
 
     useEffect(() => {
 
+        if (data !== null) return;
 
         axiosInstanceIntercept.get(url, {
             headers: {
@@ -24,7 +25,7 @@ const useAxiosGetSingle = (url, token, tokenExp) => {
 
         return () => console.log('clean up from single!');
 
-    }, [url])
+    }, [data])
 
     return data;
 

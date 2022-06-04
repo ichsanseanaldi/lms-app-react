@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useRefresh } from '../../hooks/useRefresh'
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCourseExerciseThunk, getCourseMateriThunk } from '../../redux/user/thunk';
+import { StyledContainer } from '../../style/components/StyledContainer';
+import { NavBarGuru } from '../partials/NavBarGuru';
+import { StyledWrapper } from '../../style/components/StyledWrapper';
+import { StyledHeading } from '../../style/components/StyledHeading';
+import { Table } from '../partials/Table';
+import { yellow } from '../../style/ColorVariable';
 
 export const CourseDetailGuru = () => {
 
@@ -22,54 +27,50 @@ export const CourseDetailGuru = () => {
     }, [dispatch])
 
     return (
-        <div>
-            <div>CourseDetail id : {id}</div>
-            <div>
-                <h4>Detail course</h4>
-                {detail && detail.map((e) => {
-                    return (
-                        <div key={e.id_course}>
-                            <p>{e.id_course}</p>
-                            <p>{e.code_course}</p>
-                            <p>{e.judul_course}</p>
-                            <p>{e.deskripsi_course}</p>
-                        </div>
-                    )
-                })
-                }
-            </div>
-            <p>------------------------------</p>
-            <div>
-                <h4>Materi Course</h4>
-                {materi && materi.map(e => {
-                    return (
-                        <div key={e.id_materi}>
-                            <p>{e.id_materi}</p>
-                            <p>{e.judul_materi}</p>
-                            <p>{e.point_materi}</p>
-                            <Link to={`/course-materi-guru/${e.id_materi}`}>Materi Detail.. </Link>
-                        </div>
-                    )
 
-                })}
-                <Link to={`/add-materi/${id}`}>Tambah Materi</Link>
-            </div>
-            <p>------------------------------</p>
-            <div>
-                <h4>Exercise Course</h4>
-                {exercise.length > 0 && exercise.map(e => {
-                    return (
-                        <div key={e.id_exercise}>
-                            <p>{e.judul_exercise}</p>
-                            <Link to={`/course-exercise/${e.id_exercise}`}>Exercise Detail.. </Link>
-                        </div>
-                    )
-                })}
-                <Link to={`/add-exercise/${id}`}>Tambah Exercise</Link>
-            </div>
-        </div>
-
-
+        <StyledContainer flex="flex">
+            <NavBarGuru />
+            <StyledWrapper>
+                <StyledHeading backgroundcolor={yellow}>
+                    Detail Course
+                </StyledHeading>
+                <div className='flex'>
+                    {detail && detail.map((e) => {
+                        return (
+                            <div key={e.id_course}>
+                                <div className='flex p-10-all'>
+                                    <h2>Judul:</h2>
+                                    <p className='brand p-10-lr' >{e.judul_course}</p>
+                                </div>
+                                <div className='flex p-10-all'>
+                                    <h2>Code:</h2>
+                                    <p className='brand p-10-lr'>{e.code_course}</p>
+                                </div>
+                                <div className='flex p-10-all'>
+                                    <h2>Deskripsi:</h2>
+                                    <p className='brand p-10-lr'>{e.deskripsi_course}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
+                <div className='flex flex-column '>
+                    <Table
+                        id={id}
+                        title="Materi"
+                        value={materi}
+                    />
+                </div>
+                <div className='flex flex-column'>
+                    <Table
+                        id={id}
+                        title="Exercise"
+                        value={exercise}
+                    />
+                </div>
+            </StyledWrapper>
+        </StyledContainer>
     )
 }
 

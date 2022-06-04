@@ -3,14 +3,18 @@ import { useRefresh } from '../../hooks/useRefresh';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addAkunThunk } from '../../redux/admin/thunk';
-
+import { StyledContainer } from '../../style/components/StyledContainer';
+import { StyledWrapper } from '../../style/components/StyledWrapper';
+import { StyledHeading } from '../../style/components/StyledHeading';
+import { grey } from '../../style/ColorVariable';
+import { Form } from '../partials/Form';
 
 export const Register = () => {
 
     const [usernameRegister, setUsername] = useState('');
     const [passwordRegister, setPassword] = useState('');
 
-    const [token, tokenExp, resRole] = useRefresh('admin');
+    const [token, tokenExp] = useRefresh('admin');
 
     const dispatch = useDispatch();
 
@@ -30,21 +34,25 @@ export const Register = () => {
 
     return (
 
-        <div>
-
-            <h1>Register Akun Guru</h1>
-
-            <form onSubmit={post}>
-                <input type="text" name="username" placeholder='username' value={usernameRegister} onChange={e => setUsername(e.target.value)} />
-                <br />
-                <br />
-                <input type="password" name="password" placeholder='password' value={passwordRegister} onChange={e => setPassword(e.target.value)} />
-                <br />
-                <br />
-                <input type="submit" value="submit" />
-            </form>
-
-
-        </div>
+        <StyledContainer>
+            <StyledWrapper>
+                <StyledHeading backgroundcolor={grey}>
+                    Register Akun Guru
+                </StyledHeading>
+                <div className='m-t-20 flex flex-center'>
+                    <Form
+                        typeOne="text"
+                        typeTwo="password"
+                        nameOne="username"
+                        nameTwo="password"
+                        onSubmit={post}
+                        onChangeOne={e => setUsername(e.target.value)}
+                        onChangeTwo={e => setPassword(e.target.value)}
+                        valueOne={usernameRegister}
+                        valueTwo={passwordRegister}
+                    />
+                </div>
+            </StyledWrapper>
+        </StyledContainer>
     )
 }

@@ -1,9 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useAxiosGetSingle from '../../hooks/useAxiosGetSingle';
 import { useRefresh } from '../../hooks/useRefresh';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { addExerciseSoalThunk } from '../../redux/user/thunk';
+import { StyledContainer } from '../../style/components/StyledContainer';
+import { StyledWrapper } from '../../style/components/StyledWrapper';
+import { StyledHeading } from '../../style/components/StyledHeading';
+import { NavBarGuru } from '../partials/NavBarGuru';
+import { primary, white, yellow } from '../../style/ColorVariable';
+import { AddSoalTemplate } from '../partials/AddSoalTemplate';
+import { StyledButton } from '../../style/components/StyledButton'
+import { StyledSelect } from '../../style/components/StyledSelect';
 
 export const TambahSoal = () => {
 
@@ -16,7 +24,7 @@ export const TambahSoal = () => {
     const [optionC, setOptionC] = useState('');
     const [optionD, setOptionD] = useState('');
     const [optionKey, setOptionKey] = useState('');
-    const [pointSoal, setPointSoal] = useState('');
+    const [pointSoal, setPointSoal] = useState(20);
 
     const [token, tokenExp] = useRefresh('guru');
 
@@ -34,7 +42,7 @@ export const TambahSoal = () => {
         optionD: optionD,
         optionKey: optionKey,
         pointSoal: pointSoal,
-        idExercise: exercise && exercise.id_exercise
+        idExercise: exercise !== null && exercise.id_exercise
     }
 
     const post = (e) => {
@@ -53,48 +61,58 @@ export const TambahSoal = () => {
         setOptionB('')
         setOptionC('')
         setOptionD('')
-        setPointSoal('')
+        setPointSoal(20)
     }
 
     return (
-        <div>
+        <StyledContainer flex="flex">
+            <NavBarGuru />
+            <StyledWrapper>
+                <StyledHeading backgroundcolor={yellow}>
+                    Tambah Soal
+                </StyledHeading>
+                <div>
 
-            <h1>Tambah Soal</h1>
-            <p>{optionKey}</p>
-            {nomorSoal.current <= 5 ?
-                <>
-                    <form onSubmit={post}>
-                        <p>Nomor : {nomorSoal.current}</p>
-                        <input type="hidden" name="nomorSoal" placeholder='nomorSoal' value={nomorSoal.current} />
-                        <br />
-                        <input type="text" name="pertanyaanSoal" placeholder='pertanyaanSoal' value={pertanyaanSoal} onChange={e => setPertanyaanSoal(e.target.value)} />
-                        <br />
-                        <input type="radio" name="option" id="optionAradio" value='option_a' onChange={e => setOptionKey(e.target.value)} />
-                        <input type="text" name="optionA" placeholder='optionA' value={optionA} onChange={e => setOptionA(e.target.value)} />
-                        <br />
-                        <input type="radio" name="option" id="optionBradio" value='option_b' onChange={e => setOptionKey(e.target.value)} />
-                        <input type="text" name="optionB" placeholder='optionB' value={optionB} onChange={e => setOptionB(e.target.value)} />
-                        <br />
-                        <input type="radio" name="option" id="optionCradio" value='option_c' onChange={e => setOptionKey(e.target.value)} />
-                        <input type="text" name="optionC" placeholder='optionC' value={optionC} onChange={e => setOptionC(e.target.value)} />
-                        <br />
-                        <input type="radio" name="option" id="optionDradio" value='option_d' onChange={e => setOptionKey(e.target.value)} />
-                        <input type="text" name="optionD" placeholder='optionD' value={optionD} onChange={e => setOptionD(e.target.value)} />
-                        <br />
-                        <input type="text" name="pointSoal" placeholder='pointSoal' value={pointSoal} onChange={e => setPointSoal(e.target.value)} />
-                        <br />
-                        <br />
-                        <input type="submit" value="submit" />
+                    <>
+                        <form onSubmit={post}>
+                            <input type="hidden" name="nomorSoal" placeholder='nomorSoal' value={nomorSoal.current} />
+                            <AddSoalTemplate
+                                border={true}
+                                nomorSoal={nomorSoal.current}
+                                PPS='Pertanyaan Soal'
+                                valuePS={pertanyaanSoal}
+                                valueA={optionA}
+                                valueB={optionB}
+                                valueC={optionC}
+                                valueD={optionD}
+                                onChangePS={e => setPertanyaanSoal(e.target.value)}
+                                onChangeA={e => setOptionA(e.target.value)}
+                                onChangeB={e => setOptionB(e.target.value)}
+                                onChangeC={e => setOptionC(e.target.value)}
+                                onChangeD={e => setOptionD(e.target.value)}
+                                onChangeKey={e => setOptionKey(e.target.value)}
+                            />
+                            <div className='p-10-all '>
+                                <p>Point Soal</p>
+                                <StyledSelect value={pointSoal} onChange={e => setPointSoal(e.target.value)}>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </StyledSelect >
+                            </div>
+                            <div>
+                                <StyledButton width="100%" backgroundcolor={primary} color={white}>Submit</StyledButton>
+                            </div>
+                        </form>
+                        {nomorSoal.current < 10 &&
+                            <StyledButton onClick={next} width="100%" backgroundcolor={yellow}>Next</StyledButton>
+                        }
+                    </>
 
-                        <br />
-                    </form>
-                    <button onClick={next}>Next</button>
-                </>
+                </div>
 
-                :
+            </StyledWrapper>
+        </StyledContainer>
 
-                <><p>Batas Maksimum Soal 5</p></>
-            }
-        </div>
     )
 }
