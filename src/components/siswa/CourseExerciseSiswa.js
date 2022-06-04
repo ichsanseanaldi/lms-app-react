@@ -27,6 +27,7 @@ export const CourseExerciseSiswa = () => {
     const [toggletwo, setToggletwo] = useState(false);
     const [data, setData] = useState([]);
     const [result, setResult] = useState({});
+    const [load, setLoad] = useState(false)
 
     useEffect(() => {
         dispatch(getCourseExerciseSoalThunk(token, tokenExp, id))
@@ -39,9 +40,11 @@ export const CourseExerciseSiswa = () => {
 
     const post = async () => {
         setToggle(false)
+        setLoad(true)
         const res = await dispatch(verifyAnswerThunk(body, token, tokenExp))
         setData(res.data.data)
         setResult(res.data.result)
+        setLoad(false)
         setToggletwo(true)
     }
 
@@ -125,6 +128,14 @@ export const CourseExerciseSiswa = () => {
                         ask='Apakah kamu sudah memahami materi nya?'
                         desc='Materi tidak akan bisa di akses setelah selesai!'
                         onClick={done}
+                    />
+
+                }
+                {
+                    load &&
+
+                    <Modal
+                        load={true}
                     />
 
                 }

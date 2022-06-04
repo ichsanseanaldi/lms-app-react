@@ -17,17 +17,17 @@ import { CourseDetailGuru } from './components/guru/CourseDetailGuru';
 import { CourseDetailSiswa } from './components/siswa/CourseDetailSiswa';
 import { CourseMateriGuru } from './components/guru/CourseMateriGuru';
 import { CourseMateriSiswa } from './components/siswa/CourseMateriSiswa';
-
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
-
-import { GlobalStyled } from './style/GlobalStyle.style';
 import { CourseList } from './components/guru/CourseList';
 import { CourseExerciseGuru } from './components/guru/CourseExerciseGuru';
 import { CourseListSiswa } from './components/siswa/CourseListSiswa';
 import { CourseExerciseSiswa } from './components/siswa/CourseExerciseSiswa';
 import { Leaderboard } from './components/siswa/Leaderboard';
 import { Transition } from './components/siswa/Transition';
+
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
+import { GlobalStyled } from './style/GlobalStyle.style';
 
 
 function App() {

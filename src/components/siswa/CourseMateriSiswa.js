@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useRefresh } from '../../hooks/useRefresh'
 import { useDispatch, useSelector } from 'react-redux';
 import { verifyMateriThunk } from '../../redux/user/thunk';
-import { NavBarSiswa } from '../partials/NavBarSiswa';
+// import { NavBarSiswa } from '../partials/NavBarSiswa';
 import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { StyledContainer } from '../../style/components/StyledContainer';
 import { StyledHeading } from '../../style/components/StyledHeading';
@@ -24,6 +24,7 @@ export const CourseMateriSiswa = () => {
     const [toggle, setToggle] = useState(false);
     const [toggletwo, setToggletwo] = useState(false);
     const [data, setData] = useState([]);
+    const [load, setLoad] = useState(false)
 
     const body = {
         idmateri: materidetail[0] !== undefined && materidetail[0].course_materi.id_materi,
@@ -32,8 +33,10 @@ export const CourseMateriSiswa = () => {
 
     const post = async () => {
         setToggle(false)
+        setLoad(true)
         const res = await dispatch(verifyMateriThunk(body, token, tokenExp))
         setData(res.data.data)
+        setLoad(false)
         setToggletwo(true)
 
     }
@@ -48,7 +51,6 @@ export const CourseMateriSiswa = () => {
 
     return (
         <StyledContainer flex="flex">
-            <NavBarSiswa />
             <StyledWrapper>
                 <StyledHeading backgroundcolor={primary}>
                     Materi
@@ -56,7 +58,7 @@ export const CourseMateriSiswa = () => {
                 {materidetail !== undefined && materidetail.map((e, i) => {
                     return (
                         <div>
-                            {e.isFinished ?
+                            {e.isFinished === 'false' ?
                                 <div key={i + 1}>
                                     <div className='m-t-20'>
                                         <span> <strong>Judul Materi :</strong>  </span>
@@ -110,7 +112,14 @@ export const CourseMateriSiswa = () => {
                     />
 
                 }
+                {
+                    load &&
 
+                    <Modal
+                        load={true}
+                    />
+
+                }
             </StyledWrapper>
         </StyledContainer>
 

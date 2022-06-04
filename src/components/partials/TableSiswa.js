@@ -44,7 +44,7 @@ export const TableSiswa = (props) => {
                                         <td>{e.course_exercise.judul_exercise}</td>
                                         <td>{e.course_exercise.point_exercise}</td>
                                         <td>
-                                            {e.isFinished ?
+                                            {e.isFinished === 'false' ?
 
                                                 <Link to={`/course-exercise-siswa/${e.id_exercise}`}>Lihat</Link>
 
