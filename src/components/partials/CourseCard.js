@@ -40,7 +40,7 @@ export const CourseCard = (props) => {
 
                                     :
 
-                                    <button className='text-center p-15-all w-100' type='submit' onClick={props.post}>Join Course</button>
+                                    <button className='text-center p-15-all w-100' type='submit' onClick={props.post}>Join Course +</button>
                             }
 
                         </div>

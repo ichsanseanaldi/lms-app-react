@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const option = {
     withCredentials: true,
-    credentials: 'include',
     baseURL: 'https://lms-app-heroku.herokuapp.com/'
 }
 

@@ -18,7 +18,7 @@ export const NavBarLanding = () => {
                     <Link to={'/'} > Home</Link>
                 </div>
                 <div className='link-nav'>
-                    <Link to={'/login'} > Login</Link>
+                    <Link to={'/login'} > Log In</Link>
                 </div>
             </div>
         </div>

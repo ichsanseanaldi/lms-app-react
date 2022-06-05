@@ -12,6 +12,7 @@ export const GlobalStyled = createGlobalStyle`
     body{
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
+        color:#303030 ;
     }
 
     a,p,label,button,::placeholder{

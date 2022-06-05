@@ -9,9 +9,9 @@ export const StyledCard = styled.div`
     padding: 10px 0 ;
     display: flex ;
     border-radius:10px ;
-    border : 5px solid ${props => props.bordercolor};
+    border : 2px solid ${props => props.bordercolor};
+	box-shadow:0 0  10px ${props => props.bordercolor};
     
-
 
     .svg-card{
         animation: myAnim 2s ease 0s 1 normal forwards;

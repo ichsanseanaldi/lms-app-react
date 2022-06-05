@@ -3,12 +3,15 @@ import { StyledRow } from '../../style/components/StyledRow'
 
 export const TableRow = (props) => {
 
+
+
     return (
         <StyledRow
             title={props.title}
             backgroundcolor={props.backgroundcolor}
             width={props.width}
             color={props.color}
+            ordinal={props.ordinal}
         >
             {props.title ?
 
@@ -29,7 +32,7 @@ export const TableRow = (props) => {
                     </div>
                     <div>
                         <h1>
-                            {props.nama}
+                            {props.nama}{props.nama === props.currentName ? ' (you)' : ''}
                         </h1>
                     </div>
                     <div>
