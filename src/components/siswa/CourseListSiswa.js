@@ -44,7 +44,7 @@ export const CourseListSiswa = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className='flex flex-wrap'>
+                            <div className='flex flex-wrap course-wrapper'>
                                 {course.joint !== null && course.map((course, i) => {
                                     return (
                                         <CourseCard

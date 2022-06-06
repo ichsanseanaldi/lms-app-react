@@ -19,7 +19,7 @@ export const LandingPage = () => {
                 <div className='flex flex-column flex-center-start landing-desc'>
 
                     <StyledHeading backgroundcolor={grey} >Fun Way To Learn!</StyledHeading>
-                    <p>Learning Management System made for teachers and students to make learning more fun and exciting!</p>
+                    <p>Learning Management System made for teachers and students to make learning process more fun and exciting!</p>
                     <StyledButton
                         as={Link}
                         to={'/login'}
