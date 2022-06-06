@@ -19,7 +19,7 @@ export const StyledRow = styled.div`
     }
 
     @media (max-width:530px){
-        font-size:0.8rem;
+        font-size:0.6rem;
     }
 
 

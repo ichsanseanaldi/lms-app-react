@@ -482,11 +482,11 @@ a:hover .rotate-anim-hov{
     .nav-resize::after{
         content: '';
         position: absolute;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 80px;
         width: 100vw;
-        top: 0;
         z-index: -1;
         background-color: rgba(0, 0, 0, 0.5);
     }
@@ -518,6 +518,12 @@ a:hover .rotate-anim-hov{
 }
 
 @media (max-width:530px){
+
+
+    .row-admin > *{
+        font-size: 0.7rem;
+        margin: 0 10px;
+    }
 
     .search-wrap{
         width: 100%;

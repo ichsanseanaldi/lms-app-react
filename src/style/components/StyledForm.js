@@ -9,4 +9,9 @@ export const StyledForm = styled.form`
         border:1px solid #D9D9D9;
         border-radius:10px ;
 
+        @media (max-width:530px){
+                width:400px ;
+                padding:10px ;
+        }
+
 `
