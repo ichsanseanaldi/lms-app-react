@@ -89,7 +89,7 @@ export const DashboardAdmin = () => {
                     <div className='fixed full bg-modal flex flex-center'>
                         <div className='bg-w p-20-all text-center border-round'>
                             <div className='p-20-all'>
-                                <h2>Do you want to Log Out?</h2>
+                                <h2>Log Out?</h2>
                             </div>
                             <div className='flex flex-center'>
                                 <StyledButton width="100%" color={white} backgroundcolor={primary} onClick={logout}>Yes</StyledButton>
