@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const NavBarLanding = () => {
     return (
-        <div className='p-20-ub flex'>
+        <div className='p-20-ub flex nav-main'>
             <div className='flex'>
                 <h2 className='link-nav-main'>
                     <Link to={'/'}>
@@ -11,7 +11,7 @@ export const NavBarLanding = () => {
                     </Link>
                 </h2>
             </div>
-            <div className='flex flex-j-end'>
+            <div className='flex flex-j-end nav-link-group'>
                 <div className='link-nav-main'>
                     <Link to={'/'} > Home</Link>
                 </div>

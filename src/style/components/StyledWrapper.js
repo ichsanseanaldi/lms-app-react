@@ -26,6 +26,10 @@ export const StyledWrapper = styled.div`
     @media (max-width:700px){
         margin:${props => props.main ? '0' : props.admin ? '0' : '60px 10px'};
     }
+
+    @media (max-width:530px){
+        padding:0 5px ;
+    }
     
 
 `

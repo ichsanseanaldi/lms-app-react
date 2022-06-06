@@ -504,7 +504,6 @@ a:hover .rotate-anim-hov{
         transform: rotate(-19deg);
     }
 
-
     .hidden{
         left: -80px;
     }
@@ -519,10 +518,22 @@ a:hover .rotate-anim-hov{
 
 @media (max-width:530px){
 
+    .landing-desc{
+        font-size: 0.9rem;
+    }
 
     .row-admin > *{
         font-size: 0.7rem;
         margin: 0 10px;
+    }
+
+    .nav-main{
+        padding: 5px 0;
+    }
+
+    .nav-link-group{
+        justify-content: end;
+        align-items:center;
     }
 
     .search-wrap{
@@ -544,6 +555,11 @@ a:hover .rotate-anim-hov{
        justify-content:center;
        align-items: center;
    }
+
+   .svg-resize{
+    width: 250px;
+    height: 250px;
+}
 
    .svg-ldr{
        width: 300px;

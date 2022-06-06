@@ -10,8 +10,8 @@ export const StyledForm = styled.form`
         border-radius:10px ;
 
         @media (max-width:530px){
-                width:400px ;
-                padding:10px ;
+                width:300px ;
+                padding:15px ;
         }
 
 `
