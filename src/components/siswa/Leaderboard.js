@@ -132,7 +132,7 @@ export const Leaderboard = () => {
                                 :
 
 
-                                <h1>Belum ada siswa..</h1>
+                                <h1 className='m-t-20'>loading..</h1>
 
 
 

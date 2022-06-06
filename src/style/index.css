@@ -557,14 +557,13 @@ a:hover .rotate-anim-hov{
    }
 
    .svg-resize{
-    width: 250px;
-    height: 250px;
-}
+        width: 250px;
+        height: 250px;
+    }
 
    .svg-ldr{
        width: 300px;
        height: 100px;
    }
 
-  
 }

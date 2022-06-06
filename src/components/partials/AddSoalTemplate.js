@@ -4,7 +4,7 @@ import { StyledRadio } from '../../style/components/StyledRadio'
 
 export const AddSoalTemplate = (props) => {
     return (
-        <div>
+        <div key={props.id}>
             <div className='flex p-10-all'>
                 <div className='p-20-lr'>
                     <h1>

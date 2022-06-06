@@ -87,7 +87,8 @@ export const CourseExerciseSiswa = () => {
                                     <AddSoalTemplate
                                         siswa={true}
                                         read={true}
-                                        id={i}
+                                        key={i}
+                                        id={e.id_soal}
                                         nomorSoal={e.nomor_soal}
                                         valuePS={e.pertanyaan_soal}
                                         valueA={e.option_a}

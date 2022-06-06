@@ -33,6 +33,8 @@ export const TambahSoal = () => {
 
     const exercise = useAxiosGetSingle(`course/get-course-exercise/${randomcode}`, token, tokenExp);
 
+    console.log(exercise);
+
     const body = {
         nomorSoal: nomorSoal.current,
         pertanyaanSoal: pertanyaanSoal,
@@ -72,45 +74,40 @@ export const TambahSoal = () => {
                     Tambah Soal
                 </StyledHeading>
                 <div>
-
-                    <>
-                        <form onSubmit={post}>
-                            <input type="hidden" name="nomorSoal" placeholder='nomorSoal' value={nomorSoal.current} />
-                            <AddSoalTemplate
-                                border={true}
-                                nomorSoal={nomorSoal.current}
-                                PPS='Pertanyaan Soal'
-                                valuePS={pertanyaanSoal}
-                                valueA={optionA}
-                                valueB={optionB}
-                                valueC={optionC}
-                                valueD={optionD}
-                                onChangePS={e => setPertanyaanSoal(e.target.value)}
-                                onChangeA={e => setOptionA(e.target.value)}
-                                onChangeB={e => setOptionB(e.target.value)}
-                                onChangeC={e => setOptionC(e.target.value)}
-                                onChangeD={e => setOptionD(e.target.value)}
-                                onChangeKey={e => setOptionKey(e.target.value)}
-                            />
-                            <div className='p-10-all '>
-                                <p>Point Soal</p>
-                                <StyledSelect value={pointSoal} onChange={e => setPointSoal(e.target.value)}>
-                                    <option value="20">20</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </StyledSelect >
-                            </div>
-                            <div>
-                                <StyledButton width="100%" backgroundcolor={primary} color={white}>Submit</StyledButton>
-                            </div>
-                        </form>
-                        {nomorSoal.current < 10 &&
-                            <StyledButton onClick={next} width="100%" backgroundcolor={yellow}>Next</StyledButton>
-                        }
-                    </>
-
+                    <form onSubmit={post}>
+                        <input type="hidden" name="nomorSoal" placeholder='nomorSoal' value={nomorSoal.current} />
+                        <AddSoalTemplate
+                            border={true}
+                            nomorSoal={nomorSoal.current}
+                            PPS='Pertanyaan Soal'
+                            valuePS={pertanyaanSoal}
+                            valueA={optionA}
+                            valueB={optionB}
+                            valueC={optionC}
+                            valueD={optionD}
+                            onChangePS={e => setPertanyaanSoal(e.target.value)}
+                            onChangeA={e => setOptionA(e.target.value)}
+                            onChangeB={e => setOptionB(e.target.value)}
+                            onChangeC={e => setOptionC(e.target.value)}
+                            onChangeD={e => setOptionD(e.target.value)}
+                            onChangeKey={e => setOptionKey(e.target.value)}
+                        />
+                        <div className='p-10-all '>
+                            <p>Point Soal</p>
+                            <StyledSelect value={pointSoal} onChange={e => setPointSoal(e.target.value)}>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </StyledSelect >
+                        </div>
+                        <div>
+                            <StyledButton width="100%" backgroundcolor={primary} color={white}>Submit</StyledButton>
+                        </div>
+                    </form>
+                    {nomorSoal.current < 10 &&
+                        <StyledButton onClick={next} width="100%" backgroundcolor={yellow}>Next</StyledButton>
+                    }
                 </div>
-
             </StyledWrapper>
         </StyledContainer>
 

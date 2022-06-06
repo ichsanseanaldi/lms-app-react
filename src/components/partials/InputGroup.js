@@ -11,9 +11,9 @@ export const InputGroup = ({ type, name, id, value, onChange, login }) => {
                 id={id}
                 value={value}
                 onChange={onChange}
-                placeholder={`${name} ${login ? '' : '(min. 5 char, max. 20 char)'}`}
+                // placeholder={`${name} ${login ? '' : '(min. 5 char, max. 20 char)'}`}
                 border={true}
-                pattern=".{5,10}"
+                // pattern=".{5,10}"
                 required
             />
         </div>
