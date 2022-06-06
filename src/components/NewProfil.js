@@ -60,14 +60,14 @@ export const NewProfil = () => {
 
         <StyledContainer flex="flex" alignItems="center">
             <StyledWrapper flex="flex">
-                <div className='flex flex-column flex-center'>
+                <div className='flex flex-column flex-center order-2'>
                     <img className='svg w-h-50 m-t-20 m-b-20' src={img} alt="profil" />
                     <div className='text-center'>
                         <h1>Welcome Newcomers !</h1>
                         <p>Sebelum mulai, tolong isi profilmu dulu ya...</p>
                     </div>
                 </div>
-                <div className='flex flex-center'>
+                <div className='flex flex-center m-t-20'>
 
                     {resRole === 'guru' ?
 

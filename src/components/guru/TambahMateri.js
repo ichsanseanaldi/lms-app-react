@@ -46,8 +46,8 @@ export const TambahMateri = () => {
                 <StyledHeading backgroundcolor={green}>
                     Tambah Materi
                 </StyledHeading>
-                <div className='m-t-20 w-50 p-10-all'>
-                    <form onSubmit={post}>
+                <div className='m-t-20 p-10-all'>
+                    <form onSubmit={post} className="form">
                         <InputGroup type="text" name="Judul Materi" value={judulMateri} onChange={e => setJudulMateri(e.target.value)} />
                         <p>Isi Materi</p>
                         <Editor
@@ -55,7 +55,6 @@ export const TambahMateri = () => {
                             onInit={(evt, editor) => editorRef.current = editor}
                             onChange={() => setIsiMateri(editorRef.current.getContent())}
                             init={{
-                                width: 500,
                                 height: 500,
                                 menubar: false,
                                 plugins: [

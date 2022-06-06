@@ -35,20 +35,20 @@ export const CourseDetailGuru = () => {
                     Detail Course
                 </StyledHeading>
                 <div className='flex'>
-                    {detail && detail.map((e) => {
+                    {detail && detail.map((e, i) => {
                         return (
-                            <div key={e.id_course}>
-                                <div className='flex p-10-all'>
-                                    <h2>Judul:</h2>
-                                    <p className='brand p-10-lr' >{e.judul_course}</p>
+                            <div key={i} className="desc-wrapper">
+                                <div className='flex p-10-all desc'>
+                                    <strong>Judul:</strong>
+                                    <p className='p-10-lr' >{e.judul_course}</p>
                                 </div>
-                                <div className='flex p-10-all'>
-                                    <h2>Code:</h2>
-                                    <p className='brand p-10-lr'>{e.code_course}</p>
+                                <div className='flex p-10-all desc'>
+                                    <strong>Code:</strong>
+                                    <p className=' p-10-lr'>{e.code_course}</p>
                                 </div>
-                                <div className='flex p-10-all'>
-                                    <h2>Deskripsi:</h2>
-                                    <p className='brand p-10-lr'>{e.deskripsi_course}</p>
+                                <div className='flex p-10-all desc'>
+                                    <strong>Deskripsi:</strong>
+                                    <p className='p-10-lr'>{e.deskripsi_course}</p>
                                 </div>
                             </div>
                         )

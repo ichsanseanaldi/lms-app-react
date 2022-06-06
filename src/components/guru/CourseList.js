@@ -7,7 +7,7 @@ import { StyledHeading } from '../../style/components/StyledHeading';
 import { NavBarGuru } from '../partials/NavBarGuru';
 import { CourseCard } from '../partials/CourseCard';
 import { StyledAddCard } from '../../style/components/StyledAddCard';
-import { magenta, pink, white } from '../../style/ColorVariable';
+import { magenta, white } from '../../style/ColorVariable';
 import { StyledButton } from '../../style/components/StyledButton';
 
 export const CourseList = () => {
@@ -21,17 +21,17 @@ export const CourseList = () => {
         <StyledContainer flex="flex">
             <NavBarGuru />
             <StyledWrapper>
-                <StyledHeading backgroundcolor={pink}>
+                <StyledHeading backgroundcolor={magenta}>
                     Course List
                 </StyledHeading>
                 <div className='m-t-20'>
                     <div>
-                        <p className='brand'>
-                            Berikut adalah daftar courses yang dimiliki oleh mu :
+                        <p>
+                            Berikut adalah daftar courses yang dimiliki oleh mu:
                         </p>
                     </div>
                 </div>
-                <div className='flex flex-wrap m-t-50'>
+                <div className='flex flex-wrap m-t-20 course-wrapper'>
                     {course[0] === '' ?
 
                         <div>
@@ -45,7 +45,7 @@ export const CourseList = () => {
 
                         :
 
-                        <div className='flex flex-wrap'>
+                        <div className='flex flex-wrap course-wrapper'>
                             {
                                 course.map((course, i) => {
                                     return (

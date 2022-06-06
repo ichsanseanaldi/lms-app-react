@@ -13,14 +13,17 @@ export const GlobalStyled = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         color:#303030 ;
+        background-color:#FAFAFA ;
     }
 
-    a,p,label,button,::placeholder{
-        font-family:'Poppins', sans-serif ;
+    ul,ol,span,p,label,button,::placeholder{
+        font-family:'Raleway', sans-serif ;
         transition:0.3s ;
+        font-weight:500 ;
     }
 
     ul,ol{
+        line-height:1.5 ;
         margin-left:2rem ;
     }
 
@@ -28,6 +31,7 @@ export const GlobalStyled = createGlobalStyle`
         display:block;
         color:inherit;
         text-decoration:none ;
+        transition:0.5s ;
 
         &:hover{
             opacity:0.5;
@@ -53,5 +57,6 @@ export const GlobalStyled = createGlobalStyle`
     label,::placeholder{
         text-transform:capitalize;
     }
+
 
 `

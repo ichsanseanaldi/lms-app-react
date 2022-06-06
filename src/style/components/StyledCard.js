@@ -12,10 +12,21 @@ export const StyledCard = styled.div`
     border : 2px solid ${props => props.bordercolor};
 	box-shadow:0 0  10px ${props => props.bordercolor};
     
-
     .svg-card{
         animation: myAnim 2s ease 0s 1 normal forwards;
     }
+
+	@media (max-width:920px){
+		width:250px ;
+	}
+
+	@media (max-width:700px){
+
+		.svg-card{
+			padding:0 ;
+		}
+
+	}
 
     @keyframes myAnim {
 	0%,
@@ -45,8 +56,6 @@ export const StyledCard = styled.div`
 	}
 }
 
-    /* &:hover > .svg-card{
-        transform: rotate(360deg) scale(0.7) ;
-    }  */
+ 
     
 `

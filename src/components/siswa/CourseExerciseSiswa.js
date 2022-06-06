@@ -82,12 +82,12 @@ export const CourseExerciseSiswa = () => {
                     {soal.length > 0 ?
                         <form onSubmit={toggler}>
                             <p>Pilih Jawaban dengan benar..</p>
-                            {soal.map((e) => {
+                            {soal.map((e, i) => {
                                 return (
                                     <AddSoalTemplate
                                         siswa={true}
                                         read={true}
-                                        id={e.id_soal}
+                                        id={i}
                                         nomorSoal={e.nomor_soal}
                                         valuePS={e.pertanyaan_soal}
                                         valueA={e.option_a}

@@ -14,4 +14,13 @@ export const StyledRow = styled.div`
     user-select:none;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.3) ;
 
+    @media (max-width:700px){
+        font-size:${props => props.ordinal === 'st' ? '1rem' : '0.9rem'};
+    }
+
+    @media (max-width:530px){
+        font-size:0.8rem;
+    }
+
+
 `

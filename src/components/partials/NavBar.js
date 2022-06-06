@@ -5,22 +5,20 @@ export const NavBarLanding = () => {
     return (
         <div className='p-20-ub flex'>
             <div className='flex'>
-                <strong className='link-nav brand'>
+                <h2 className='link-nav-main'>
                     <Link to={'/'}>
-                        <i>
-                            FWTL
-                        </i>
+                        FWTL
                     </Link>
-                </strong>
+                </h2>
             </div>
             <div className='flex flex-j-end'>
-                <div className='link-nav'>
+                <div className='link-nav-main'>
                     <Link to={'/'} > Home</Link>
                 </div>
-                <div className='link-nav'>
+                <div className='link-nav-main'>
                     <Link to={'/login'} > Log In</Link>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -30,7 +30,7 @@ export const CourseCard = (props) => {
 
                             {props.joint ?
 
-                                <p className='text-center p-15-all w-100'>Sudah Join</p>
+                                <p className='text-center p-15-all w-100 red'>Sudah Join</p>
 
                                 :
 

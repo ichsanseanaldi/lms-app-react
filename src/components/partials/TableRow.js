@@ -16,31 +16,31 @@ export const TableRow = (props) => {
             {props.title ?
 
                 <div className='flex flex-center-around-rev'>
-                    <div>Rank</div>
-                    <div>Nama</div>
-                    <div>Point</div>
-                    <div>Level</div>
+                    <div className='flex flex-center'>Rank</div>
+                    <div className='flex flex-center'>Nama</div>
+                    <div className='flex flex-center'>Point</div>
+                    <div className='flex flex-center'>Level</div>
                 </div>
 
                 :
 
                 <div className='flex flex-center-around-rev' key={props.iterate}>
-                    <div>
+                    <div className='flex flex-center'>
                         <h1>
                             {props.iterate + 1}{props.ordinal}
                         </h1>
                     </div>
-                    <div>
+                    <div className='flex flex-center'>
                         <h1>
                             {props.nama}{props.nama === props.currentName ? ' (you)' : ''}
                         </h1>
                     </div>
-                    <div>
+                    <div className='flex flex-center'>
                         <h1>
                             {props.point}
                         </h1>
                     </div>
-                    <div>
+                    <div className='flex flex-center'>
                         <h1>
                             {props.level}
                         </h1>

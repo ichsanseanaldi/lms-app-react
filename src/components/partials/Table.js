@@ -24,9 +24,15 @@ export const Table = (props) => {
                             props.value.map((e, i) => {
                                 return (
                                     <tr>
-                                        <td>{i + 1}</td>
-                                        <td>{e.judul_materi}</td>
-                                        <td>{e.point_materi}</td>
+                                        <td>
+                                            <strong>{i + 1}</strong>
+                                        </td>
+                                        <td>
+                                            <p>{e.judul_materi}</p>
+                                        </td>
+                                        <td>
+                                            <p>{e.point_materi}</p>
+                                        </td>
                                         <td>
                                             <Link to={`/course-materi-guru/${e.id_materi}`}>Lihat</Link>
                                         </td>
@@ -51,7 +57,7 @@ export const Table = (props) => {
                     }
                 </tbody>
             </StyledTable>
-            <Link className='bg-w p-10-all text-center' to={`/add-${props.title.toLowerCase()}/${props.id}`}>Tambah {props.title} +</Link>
+            <Link className='p-10-all text-center' to={`/add-${props.title.toLowerCase()}/${props.id}`}>Tambah {props.title} +</Link>
         </div>
     )
 }

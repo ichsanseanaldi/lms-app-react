@@ -23,7 +23,7 @@ export const Form = (props) => {
                     </div>
                 }
                 <div className='m-t-10'>
-                    <InputGroup type={props.typeOne} name={props.nameOne} placeholder={props.nameOne} value={props.valueOne} onChange={props.onChangeOne} />
+                    <InputGroup type={props.typeOne} name={props.nameOne} placeholder={props.nameOne} value={props.valueOne} onChange={props.onChangeOne} login={props.login} />
                 </div>
                 <div className='m-t-10'>
                     {props.typeTwo === 'textarea' ?
@@ -35,7 +35,7 @@ export const Form = (props) => {
 
                         :
 
-                        props.typeTwo && <InputGroup type={props.typeTwo} name={props.nameTwo} placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} />
+                        props.typeTwo && <InputGroup type={props.typeTwo} name={props.nameTwo} placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} login={props.login} />
                     }
                 </div>
                 <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>

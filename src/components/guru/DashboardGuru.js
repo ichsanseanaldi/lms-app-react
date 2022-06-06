@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRefresh } from '../../hooks/useRefresh';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProfilThunk, getCourseThunk } from '../../redux/user/thunk';
@@ -8,6 +8,7 @@ import { StyledHeading } from '../../style/components/StyledHeading';
 import { NavBarGuru } from '../partials/NavBarGuru';
 import { Card } from '../partials/Card';
 import { grey, primary } from '../../style/ColorVariable';
+import { Modal } from '../partials/Modal';
 
 export const DashboardGuru = () => {
 
@@ -18,10 +19,13 @@ export const DashboardGuru = () => {
   const [token, tokenExp] = useRefresh(role);
   const profil = useSelector(state => state.user.profil);
   const course = useSelector(state => state.user.course);
+  const [load, setLoad] = useState(false)
 
   useEffect(() => {
+    setLoad(true)
     dispatch(getProfilThunk(token, tokenExp, role));
     dispatch(getCourseThunk(token, tokenExp));
+    setLoad(false)
   }, [dispatch])
 
   return (
@@ -34,13 +38,13 @@ export const DashboardGuru = () => {
         </StyledHeading>
         <div className='m-t-20'>
           <div>
-            <h2>Hello {profil !== null && profil.nama_guru} !</h2>
+            <h2>Hi there, {profil !== null && profil.nama_guru}!</h2>
           </div>
           <div>
-            <p className='brand'>Welcome to your dashboard, you can see your statistic below !</p>
+            <p>Selamat datang di dashboard, kamu bisa melihat statistik mu dibawah!</p>
           </div>
         </div>
-        <div className='flex flex-wrap m-t-50'>
+        <div className='flex flex-wrap m-t-20 p-20-lr course-wrapper'>
           <Card
             svg='<svg width="100" height="100" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M59.9246 7.27999C61.4425 6.39171 63.2027 5.92007 65 5.92007C66.7972 5.92007 68.5575 6.39171 70.0754 7.27999L115.483 33.86C116.832 34.6495 117.944 35.7409 118.713 37.0329C119.483 38.3249 119.887 39.7755 119.887 41.25C119.887 42.7245 119.483 44.1751 118.713 45.4671C117.944 46.759 116.832 47.8505 115.483 48.64L70.0754 75.22C68.5575 76.1083 66.7972 76.5799 65 76.5799C63.2027 76.5799 61.4425 76.1083 59.9246 75.22L14.5167 48.64C13.1675 47.8505 12.0565 46.759 11.2866 45.4671C10.5167 44.1751 10.113 42.7245 10.113 41.25C10.113 39.7755 10.5167 38.3249 11.2866 37.0329C12.0565 35.7409 13.1675 34.6495 14.5167 33.86L59.9246 7.27999ZM65.7258 13.615C65.5088 13.4878 65.257 13.4203 65 13.4203C64.7429 13.4203 64.4912 13.4878 64.2742 13.615L18.8662 40.195C18.6738 40.3078 18.5154 40.4637 18.4057 40.6481C18.2959 40.8326 18.2384 41.0396 18.2384 41.25C18.2384 41.4604 18.2959 41.6674 18.4057 41.8519C18.5154 42.0363 18.6738 42.1921 18.8662 42.305L64.2742 68.885C64.4912 69.0122 64.7429 69.0797 65 69.0797C65.257 69.0797 65.5088 69.0122 65.7258 68.885L111.134 42.305C111.326 42.1921 111.485 42.0363 111.594 41.8519C111.704 41.6674 111.762 41.4604 111.762 41.25C111.762 41.0396 111.704 40.8326 111.594 40.6481C111.485 40.4637 111.326 40.3078 111.134 40.195L65.7258 13.615Z" fill="black"/>
@@ -56,6 +60,14 @@ export const DashboardGuru = () => {
           <Card bordercolor={grey} />
           <Card bordercolor={grey} />
         </div>
+        {
+          load &&
+
+          <Modal
+            load={true}
+          />
+
+        }
       </StyledWrapper>
     </StyledContainer>
 

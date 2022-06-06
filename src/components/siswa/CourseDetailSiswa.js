@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useRefresh } from '../../hooks/useRefresh'
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import { StyledHeading } from '../../style/components/StyledHeading';
 import { yellow } from '../../style/ColorVariable';
 import { TableSiswa } from '../partials/TableSiswa';
 import { NavBarSiswa } from '../partials/NavBarSiswa';
+import { Modal } from '../partials/Modal';
 
 export const CourseDetailSiswa = () => {
 
@@ -20,12 +21,13 @@ export const CourseDetailSiswa = () => {
     const exercise = useSelector(state => state.user.exercise);
     const materi = useSelector(state => state.user.materi);
     const detail = course.filter(e => e.id_course == id);
+    const [load, setLoad] = useState(false)
 
     useEffect(() => {
-
+        setLoad(true)
         dispatch(getCourseMateriThunk(token, tokenExp, id))
         dispatch(getCourseExerciseThunk(token, tokenExp, id))
-
+        setLoad(false)
     }, [dispatch])
 
 
@@ -38,20 +40,20 @@ export const CourseDetailSiswa = () => {
                     Detail Course Siswa
                 </StyledHeading>
                 <div className='flex'>
-                    {detail && detail.map((e) => {
+                    {detail && detail.map((e, i) => {
                         return (
-                            <div key={e.course.id_course}>
-                                <div className='flex p-10-all'>
-                                    <h2>Judul:</h2>
-                                    <p className='brand p-10-lr' >{e.course.judul_course}</p>
+                            <div key={i} className="desc-wrapper">
+                                <div className='flex p-10-all desc'>
+                                    <strong>Judul:</strong>
+                                    <p className='p-10-lr' >{e.course.judul_course}</p>
                                 </div>
-                                <div className='flex p-10-all'>
-                                    <h2>Code:</h2>
-                                    <p className='brand p-10-lr'>{e.course.code_course}</p>
+                                <div className='flex p-10-all desc'>
+                                    <strong>Code:</strong>
+                                    <p className='p-10-lr'>{e.course.code_course}</p>
                                 </div>
-                                <div className='flex p-10-all'>
-                                    <h2>Deskripsi:</h2>
-                                    <p className='brand p-10-lr'>{e.course.deskripsi_course}</p>
+                                <div className='flex p-10-all desc'>
+                                    <strong>Deskripsi:</strong>
+                                    <p className='p-10-lr'>{e.course.deskripsi_course}</p>
                                 </div>
                             </div>
                         )
@@ -75,6 +77,14 @@ export const CourseDetailSiswa = () => {
                             />
                         </div>
                     </div>
+                }
+                {
+                    load &&
+
+                    <Modal
+                        load={true}
+                    />
+
                 }
             </StyledWrapper>
         </StyledContainer>

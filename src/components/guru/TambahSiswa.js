@@ -8,7 +8,7 @@ import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { StyledHeading } from '../../style/components/StyledHeading';
 import { NavBarGuru } from '../partials/NavBarGuru';
 import { Form } from '../partials/Form';
-import { purple } from '../../style/ColorVariable';
+import { yellow } from '../../style/ColorVariable';
 
 export const TambahSiswa = () => {
 
@@ -43,10 +43,10 @@ export const TambahSiswa = () => {
         <StyledContainer flex="flex">
             <NavBarGuru />
             <StyledWrapper>
-                <StyledHeading backgroundcolor={purple}>
+                <StyledHeading backgroundcolor={yellow}>
                     Tambah Akun Siswa
                 </StyledHeading>
-                <div className='m-t-20'>
+                <div className='flex flex-center m-t-20'>
                     <Form
                         typeOne="text"
                         typeTwo="password"

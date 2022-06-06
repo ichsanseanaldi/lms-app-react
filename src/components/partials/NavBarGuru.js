@@ -7,6 +7,7 @@ import { StyledButton } from '../../style/components/StyledButton'
 export const NavBarGuru = () => {
 
     const [toggle, setToggle] = useState(false);
+    const [show, setShow] = useState(false);
 
     const logout = useLogout();
 
@@ -14,16 +15,26 @@ export const NavBarGuru = () => {
         setToggle(!toggle);
     }
 
+    const togglerNav = () => {
+        setShow(!show)
+    }
+
     return (
-        <div className='p-50-lr m-t-30'>
-            <div className='brand link-nav'>
-                <strong>
+        <div className={`p-50-lr m-t-30 nav-resize ${show ? 'appear' : 'hidden'}`}>
+            <div className='btn-toggle'>
+                <button onClick={togglerNav}>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+            <div className='brand'>
+                <b className='link-nav text-center'>
                     <Link to={'/dashboard-guru'}>
                         FWTL
                     </Link>
-                </strong>
+                </b>
             </div>
-            <div className='m-t-20'>
+            <div>
                 <div className='link-nav m-t-20'>
                     <Link to={'/dashboard-guru'}>
                         <svg width="50" height="50" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +71,7 @@ export const NavBarGuru = () => {
                 <div className='fixed full bg-modal flex flex-center'>
                     <div className='bg-w p-20-all text-center border-round'>
                         <div className='p-20-all'>
-                            <h2>Do you want to Log Out?</h2>
+                            <h2>Ingin Log Out?</h2>
                         </div>
                         <div className='flex flex-center'>
                             <StyledButton width="100%" color={white} backgroundcolor={primary} onClick={logout}>Yes</StyledButton>
