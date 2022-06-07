@@ -4,12 +4,11 @@ import styled, { keyframes } from 'styled-components';
 const animate = keyframes`
 
     0%{
-        width:0%;
+        height:0;
     }
     100%{
-        width:100% ;
+        height:20px;
     }
-
 
 `
 
@@ -23,12 +22,12 @@ export const StyledHeading = styled.h1`
     &::after{
         content:'';
         position:absolute;
-        height:20px;
+        width:100% ;
         background-color:${props => props.backgroundcolor};
         left: 0;
         bottom: 15px;
         z-index: -1;
-        animation: ${animate} 1s ease-in-out normal forwards;
+        animation: ${animate} 0.5s ease-in-out normal forwards;
     }
 
     @media (max-width:850px){

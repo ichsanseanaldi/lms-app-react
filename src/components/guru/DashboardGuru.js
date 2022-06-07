@@ -58,7 +58,6 @@ export const DashboardGuru = () => {
           />
           <Card bordercolor={grey} />
           <Card bordercolor={grey} />
-          <Card bordercolor={grey} />
         </div>
         {
           load &&

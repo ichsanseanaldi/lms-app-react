@@ -63,6 +63,9 @@ export const DashboardSiswa = () => {
                                         />
                                     </div>
                                 </div>
+                                <div className='text-center m-t-10'>
+                                    <p>Dapatkan Point dan Badges dengan menyelesaikan <strong>Materi atau Exercise!</strong></p>
+                                </div>
                             </div>
                             <div className='flex flex-wrap m-t-20 p-20-lr course-wrapper'>
                                 <Card

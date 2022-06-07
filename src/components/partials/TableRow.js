@@ -3,8 +3,6 @@ import { StyledRow } from '../../style/components/StyledRow'
 
 export const TableRow = (props) => {
 
-
-
     return (
         <StyledRow
             title={props.title}

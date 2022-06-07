@@ -104,8 +104,8 @@ export const CourseExerciseSiswa = () => {
                             <StyledButton width="100%" backgroundcolor={primary} color={white}>Submit</StyledButton>
                         </form>
                         :
-                        <div>
-                            <h1>Soal empty..</h1>
+                        <div className='m-t-20'>
+                            <h1>Soal empty...</h1>
                         </div>
                     }
                 </div >
@@ -126,8 +126,6 @@ export const CourseExerciseSiswa = () => {
                     <Modal
                         data={data}
                         result={result}
-                        ask='Apakah kamu sudah memahami materi nya?'
-                        desc='Materi tidak akan bisa di akses setelah selesai!'
                         onClick={done}
                     />
 
