@@ -113,6 +113,7 @@
 .flex-center-end{
     justify-content: center;
     align-items: end;
+    align-items: flex-end;
 }
 
 .flex-center-between-rev{
@@ -127,6 +128,7 @@
 
 .flex-j-end{
     justify-content: end;
+    justify-content: flex-end;
 }
 
 .flex-j-between{

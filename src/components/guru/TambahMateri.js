@@ -51,7 +51,7 @@ export const TambahMateri = () => {
                         <InputGroup type="text" name="Judul Materi" value={judulMateri} onChange={e => setJudulMateri(e.target.value)} />
                         <p>Isi Materi</p>
                         <Editor
-                            apiKey='0xan1y7lhv54pk6jsw0mf25rrffc5kgl23mkqfi1g2v79vbm'
+                            apiKey='2tx0fzvqg14cvw2o8v6i8chwin1kcmyxbvs0rvskx3tsng56'
                             onInit={(evt, editor) => editorRef.current = editor}
                             onChange={() => setIsiMateri(editorRef.current.getContent())}
                             init={{
