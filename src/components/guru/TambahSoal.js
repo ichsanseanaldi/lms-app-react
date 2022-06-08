@@ -17,12 +17,13 @@ export const TambahSoal = () => {
 
     const { randomcode } = useParams();
 
-    const nomorSoal = useRef(1);
+    const [nomorSoal, setNomorSoal] = useState(1)
     const [pertanyaanSoal, setPertanyaanSoal] = useState('');
     const [optionA, setOptionA] = useState('');
     const [optionB, setOptionB] = useState('');
     const [optionC, setOptionC] = useState('');
     const [optionD, setOptionD] = useState('');
+    const [optionE, setOptionE] = useState('');
     const [optionKey, setOptionKey] = useState('');
     const [pointSoal, setPointSoal] = useState(20);
 
@@ -33,15 +34,15 @@ export const TambahSoal = () => {
 
     const exercise = useAxiosGetSingle(`course/get-course-exercise/${randomcode}`, token, tokenExp);
 
-    console.log(exercise);
 
     const body = {
-        nomorSoal: nomorSoal.current,
+        nomorSoal: nomorSoal,
         pertanyaanSoal: pertanyaanSoal,
         optionA: optionA,
         optionB: optionB,
         optionC: optionC,
         optionD: optionD,
+        optionE: optionE,
         optionKey: optionKey,
         pointSoal: pointSoal,
         idExercise: exercise !== null && exercise.id_exercise
@@ -56,13 +57,14 @@ export const TambahSoal = () => {
     const next = (e) => {
         e.preventDefault();
         dispatch(addExerciseSoalThunk(body, token, tokenExp))
-        nomorSoal.current = nomorSoal.current + 1
+        setNomorSoal(nomorSoal + 1);
         setPertanyaanSoal('')
         setOptionKey('')
         setOptionA('')
         setOptionB('')
         setOptionC('')
         setOptionD('')
+        setOptionE('')
         setPointSoal(20)
     }
 
@@ -75,21 +77,23 @@ export const TambahSoal = () => {
                 </StyledHeading>
                 <div>
                     <form onSubmit={post}>
-                        <input type="hidden" name="nomorSoal" placeholder='nomorSoal' value={nomorSoal.current} />
+                        <input type="hidden" name="nomorSoal" placeholder='nomorSoal' value={nomorSoal} onChange={e => setNomorSoal(e.target.value)} />
                         <AddSoalTemplate
                             border={true}
-                            nomorSoal={nomorSoal.current}
+                            nomorSoal={nomorSoal}
                             PPS='Pertanyaan Soal'
                             valuePS={pertanyaanSoal}
                             valueA={optionA}
                             valueB={optionB}
                             valueC={optionC}
                             valueD={optionD}
+                            valueE={optionE}
                             onChangePS={e => setPertanyaanSoal(e.target.value)}
                             onChangeA={e => setOptionA(e.target.value)}
                             onChangeB={e => setOptionB(e.target.value)}
                             onChangeC={e => setOptionC(e.target.value)}
                             onChangeD={e => setOptionD(e.target.value)}
+                            onChangeE={e => setOptionE(e.target.value)}
                             onChangeKey={e => setOptionKey(e.target.value)}
                         />
                         <div className='p-10-all '>
@@ -104,7 +108,7 @@ export const TambahSoal = () => {
                             <StyledButton width="100%" backgroundcolor={primary} color={white}>Submit</StyledButton>
                         </div>
                     </form>
-                    {nomorSoal.current < 10 &&
+                    {nomorSoal < 10 &&
                         <StyledButton onClick={next} width="100%" backgroundcolor={yellow}>Next</StyledButton>
                     }
                 </div>

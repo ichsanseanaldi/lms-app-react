@@ -37,7 +37,7 @@ export const DashboardSiswa = () => {
                 </StyledHeading>
                 <div className='m-t-20'>
                     <div>
-                        <h2>Hi there, {profil && profil.nama_siswa}!</h2>
+                        <h2>Hi there!</h2>
                     </div>
                     <div>
                         <p>Selamat datang di dashboard, kamu bisa melihat statistik mu dibawah!</p>
@@ -46,25 +46,31 @@ export const DashboardSiswa = () => {
                 <div>
                     {profil !== null &&
                         <div>
-                            <div className='m-t-20'>
-                                <div className='flex flex-center-between-rev p-10-all '>
-                                    <div>
-                                        Level {profil.level_siswa}
-                                    </div>
-                                    <div>
-                                        Level {profil.level_siswa + 1}
-                                    </div>
+                            <div className='flex flex-center-start-rev ava-wrapper'>
+                                <div className='m-t-10 p-20-all flex-only flex-center flex-column'>
+                                    <div className='avatar-svg-dashboard' dangerouslySetInnerHTML={{ __html: profil.avatarSvg }} />
+                                    <h2 className='m-t-10'>{profil.nama_siswa}</h2>
                                 </div>
-                                <div>
-                                    <div className='p-10-all bordered border-round bg-w'>
-                                        <LevelBar
-                                            currentLevel={profil.level_siswa}
-                                            pointSiswa={profil.point_siswa}
-                                        />
+                                <div className='m-t-10 flex flex-column'>
+                                    <div className='flex-only flex-center-between-rev p-10-all '>
+                                        <div>
+                                            Level {profil.level_siswa}
+                                        </div>
+                                        <div>
+                                            Level {profil.level_siswa + 1}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='text-center m-t-10'>
-                                    <p>Dapatkan Point dan Badges dengan menyelesaikan <strong>Materi atau Exercise!</strong></p>
+                                    <div>
+                                        <div className='p-10-all bordered border-round bg-w'>
+                                            <LevelBar
+                                                currentLevel={profil.level_siswa}
+                                                pointSiswa={profil.point_siswa}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className='text-center m-t-10'>
+                                        <p>Dapatkan Point dan Badges dengan menyelesaikan <strong>Materi atau Exercise!</strong></p>
+                                    </div>
                                 </div>
                             </div>
                             <div className='flex flex-wrap m-t-20 p-20-lr course-wrapper'>

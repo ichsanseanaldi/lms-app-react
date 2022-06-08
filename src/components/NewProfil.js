@@ -7,6 +7,7 @@ import { Form } from './partials/Form';
 import { StyledContainer } from '../style/components/StyledContainer';
 import { StyledWrapper } from '../style/components/StyledWrapper';
 import img from '../assets/card-profil-2.svg'
+import { avatars } from '../assets/AvatarSvg';
 
 export const NewProfil = () => {
 
@@ -19,6 +20,7 @@ export const NewProfil = () => {
     const [nip, setNip] = useState('');
     const [namaGuru, setNamaGuru] = useState('');
     const [namaSiswa, setNamaSiswa] = useState('');
+    const [avatar, setAvatar] = useState('')
 
     const body = (() => {
         if (resRole === 'guru') {
@@ -29,6 +31,7 @@ export const NewProfil = () => {
         }
         else {
             return {
+                avatarSvg: avatar,
                 namaSiswa: namaSiswa
             }
         }
@@ -87,15 +90,31 @@ export const NewProfil = () => {
 
                         :
 
-                        <Form
-                            typeOne="text"
-                            nameOne="nama Siswa"
-                            onSubmit={post}
-                            onChangeOne={handleNamaSiswa}
-                            valueOne={namaSiswa}
-                            header='Profil Siswa'
-                            svg={svg}
-                        />
+                        <div className='flex flex-column flex-center'>
+                            <p>Pilih avatar mu!</p>
+                            <div className='flex flex-wrap flex-center m-b-10 m-t-10'>
+                                {avatars.map((e) => {
+                                    return (
+                                        <div key={e.id} className="m-lr-10 p-10-all flex flex-column flex-center">
+                                            <div className='avatar-svg' dangerouslySetInnerHTML={{ __html: e.svg }} />
+                                            <input className='m-t-10 radio' type="radio" name="svg" id={e.id} value={e.svg} onChange={e => setAvatar(e.target.value)} required />
+                                        </div>
+                                    )
+                                })
+                                }
+                            </div>
+
+                            < Form
+                                typeOne="text"
+                                nameOne="nama Siswa"
+                                onSubmit={post}
+                                onChangeOne={handleNamaSiswa}
+                                valueOne={namaSiswa}
+                                header='Profil Siswa'
+                                svg={svg}
+                            />
+
+                        </div>
 
                     }
 

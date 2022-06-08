@@ -76,6 +76,19 @@ export const AddSoalTemplate = (props) => {
                             <StyledInput type="text" name={props.valueD} value={props.valueD} onChange={props.onChangeD} disabled={props.disabled} border={props.border} readOnly={props.read} required />
                         </div>
                     </div>
+                    <div className='flex flex-center'>
+                        <div className='p-20-lr m-t-10' >
+                            <StyledRadio type="radio" name={props.id ? props.id : "option"} id="optionEradio" value='option_e' onChange={props.onChangeKey} disabled={props.disabled} required />
+                        </div>
+                        <div className='p-20-lr'>
+                            <h1>
+                                e.
+                            </h1>
+                        </div>
+                        <div className='flex p-20-lr'>
+                            <StyledInput type="text" name={props.valueE} value={props.valueE} onChange={props.onChangeE} disabled={props.disabled} border={props.border} readOnly={props.read} required />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

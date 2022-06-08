@@ -31,9 +31,9 @@ export const StyledBar = styled.div`
         width:${props => props.data}% ;
         z-index:-2 ;
         border-radius:5px ;
-        box-shadow: 0 0 15px rgb(255,2,2) ; 
-        background: rgb(255,2,2);
-        background: linear-gradient(90deg, rgba(255,2,2,1) 0%, rgba(255,153,0,1) 50%, rgba(255,81,0,1) 100%);
+        /* box-shadow: 0 0 15px #1DCDFF ;  */
+        background: #1DCDFF;
+        /* background: linear-gradient(90deg, rgba(255,2,2,1) 0%, rgba(255,153,0,1) 50%, rgba(255,81,0,1) 100%); */
     }
 
     &::before{

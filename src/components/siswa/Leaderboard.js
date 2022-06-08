@@ -114,6 +114,7 @@ export const Leaderboard = () => {
                                 width="100%"
                             />
                             {siswa.length > 0 ? siswa.map((e, i) => {
+                                console.log(e);
                                 return (
                                     <TableRow
                                         currentName={profil.nama_siswa}
@@ -123,6 +124,7 @@ export const Leaderboard = () => {
                                         color={accentColor[i]}
                                         ordinal={ordinal[i]}
                                         nama={e.nama_siswa}
+                                        avatar={e.avatarSvg}
                                         level={e.level_siswa}
                                         point={e.point_siswa}
                                     />
