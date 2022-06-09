@@ -9,7 +9,7 @@ export const LevelBar = (props) => {
 
     return (
         <StyledBar data={percentage} >
-            {pointSiswa}/{currentLevel * 100 + 100} ({percentage}%)
+            {pointSiswa !== NaN ? pointSiswa : '0'}/{pointSiswa !== NaN ? currentLevel * 100 + 100 : 0} ({percentage !== NaN ? percentage : '0'}%)
         </StyledBar>
     )
 }

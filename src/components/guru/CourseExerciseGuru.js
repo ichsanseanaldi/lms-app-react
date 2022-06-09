@@ -56,6 +56,7 @@ export const CourseExerciseGuru = () => {
                                     valueB={e.option_b}
                                     valueC={e.option_c}
                                     valueD={e.option_d}
+                                    valueE={e.option_e}
                                 />
                             </div>
                         )

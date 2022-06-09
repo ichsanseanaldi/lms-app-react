@@ -95,6 +95,7 @@ export const CourseExerciseSiswa = () => {
                                         valueB={e.option_b}
                                         valueC={e.option_c}
                                         valueD={e.option_d}
+                                        valueE={e.option_e}
                                         onChangeKey={e => handleChange(e)}
 
                                     />

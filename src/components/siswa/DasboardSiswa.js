@@ -49,7 +49,7 @@ export const DashboardSiswa = () => {
                             <div className='flex flex-center-start-rev ava-wrapper'>
                                 <div className='m-t-10 p-20-all flex-only flex-center flex-column'>
                                     <div className='avatar-svg-dashboard' dangerouslySetInnerHTML={{ __html: profil.avatarSvg }} />
-                                    <h2 className='m-t-10'>{profil.nama_siswa}</h2>
+                                    <h3 className='m-t-10'>{profil.nama_siswa}</h3>
                                 </div>
                                 <div className='m-t-10 flex flex-column'>
                                     <div className='flex-only flex-center-between-rev p-10-all '>

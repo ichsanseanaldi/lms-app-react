@@ -133,8 +133,10 @@ export const Leaderboard = () => {
 
                                 :
 
-
-                                <h1 className='m-t-20'>loading..</h1>
+                                <div className='m-t-20 p-20-all'>
+                                    <div className='borders p-20-all'></div>
+                                    <h1 className='m-t-20'>loading...</h1>
+                                </div>
 
 
 

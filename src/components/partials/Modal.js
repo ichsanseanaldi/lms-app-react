@@ -9,7 +9,8 @@ export const Modal = (props) => {
             {props.load ?
 
                 <div className='bg-w p-20-all text-center border-round'>
-                    <h2 className='p-20-all'>Loading....</h2>
+                    <div className='borders p-20-all'></div>
+                    <h2 className='m-t-20 p-20-all'>Loading....</h2>
                 </div>
 
                 :
