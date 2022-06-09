@@ -619,7 +619,7 @@ a:hover .rotate-anim-hov{
 }
 
 .borders:after, .borders:before {
-      border: 6px solid var(--primary);
+      border: 6px solid #202020;
       border-radius: 100%;
       position: absolute;
       content: '';
