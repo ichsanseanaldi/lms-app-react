@@ -8,7 +8,7 @@ export const Modal = (props) => {
         <div className='fixed full bg-modal flex flex-center'>
             {props.load ?
 
-                <div className='bg-w p-20-all text-center border-round flex flex-column flex-center'>
+                <div className='bg-w p-20-all text-center border-round flex-only flex-column flex-center'>
                     <div className='borders p-20-all'></div>
                     <h2 className='m-t-20 p-20-all'>Loading....</h2>
                 </div>
