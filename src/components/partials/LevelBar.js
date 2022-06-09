@@ -8,8 +8,13 @@ export const LevelBar = (props) => {
     const percentage = Math.round((pointSiswa * 100) / (currentLevel * 100 + 100));
 
     return (
-        <StyledBar data={percentage} >
-            {pointSiswa ? pointSiswa : 0}/{pointSiswa === NaN ? 0 : currentLevel * 100 + 100} ({percentage === NaN ? 0 : percentage}%)
-        </StyledBar>
+        <div>
+            {percentage !== NaN && currentLevel !== NaN &&
+
+                <StyledBar data={percentage} >
+                    {pointSiswa}/{currentLevel * 100 + 100} ({percentage}%)
+                </StyledBar>}
+        </div>
     )
+
 }

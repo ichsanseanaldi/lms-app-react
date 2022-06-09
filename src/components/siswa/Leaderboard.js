@@ -133,9 +133,9 @@ export const Leaderboard = () => {
 
                                 :
 
-                                <div className='m-t-20 p-20-all'>
+                                <div className='m-t-20 p-20-all flex flex-column flex-center'>
                                     <div className='borders p-20-all'></div>
-                                    <h1 className='m-t-20'>loading...</h1>
+                                    <h1 className='m-t-20'>Loading...</h1>
                                 </div>
 
 
