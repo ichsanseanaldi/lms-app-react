@@ -20,14 +20,14 @@ export const NavBarSiswa = () => {
     }
 
     return (
-        <div className={`p-50-lr m-t-30 nav-resize ${show ? 'appear' : 'hidden'}`}>
+        <div className={`p-20-lr nav-resize ${show ? 'appear' : 'hidden'}`}>
             <div className='btn-toggle'>
                 <button onClick={togglerNav}>
                     <div></div>
                     <div></div>
                 </button>
             </div>
-            <div className='brand'>
+            <div className='brand m-t-30'>
                 <b className='link-nav text-center'>
                     <Link to={'/dashboard-siswa'}>
                         FWTL

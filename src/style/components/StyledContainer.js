@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
 
-    max-width:90vw;
+    width:95vw;
     margin: auto ;
     min-height:100vh ;
 
