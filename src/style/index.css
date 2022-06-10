@@ -548,6 +548,7 @@ a:hover .rotate-anim-hov{
 
     .ava-wrapper{
         flex-direction: column;
+        padding: 10px;
     }
 
     .avatar-svg-wrap,
