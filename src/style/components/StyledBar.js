@@ -17,6 +17,7 @@ export const StyledBar = styled.div`
 
     text-align:center;
     position:relative;
+    padding: 5px 10px ;
     z-index:2;
     color:#303030 ;
     font-weight:700 ;
@@ -29,9 +30,8 @@ export const StyledBar = styled.div`
         left:0 ;
         width:${props => props.data}% ;
         z-index:-2 ;
-        /* box-shadow: 0 0 15px #1DCDFF ;  */
+        border-radius:5px ;
         background: #1DCDFF;
-        /* background: linear-gradient(90deg, rgba(255,2,2,1) 0%, rgba(255,153,0,1) 50%, rgba(255,81,0,1) 100%); */
     }
 
     &::before{

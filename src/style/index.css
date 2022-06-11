@@ -297,6 +297,10 @@
     height: 100px;
 }
 
+.p-bar{
+    font-size: 0.9em;
+}
+
 .btn-toggle{
     display: none;
     background-color: #fff;
@@ -548,7 +552,7 @@ a:hover .rotate-anim-hov{
 
     .ava-wrapper{
         flex-direction: column;
-        padding: 10px;
+        padding: 5px;
     }
 
     .avatar-svg-wrap,

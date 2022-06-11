@@ -37,7 +37,7 @@ export const CourseDetailSiswa = () => {
             <NavBarSiswa />
             <StyledWrapper>
                 <StyledHeading backgroundcolor={yellow}>
-                    Detail Course Siswa
+                    Detail Course
                 </StyledHeading>
                 <div className='flex'>
                     {detail && detail.map((e, i) => {
