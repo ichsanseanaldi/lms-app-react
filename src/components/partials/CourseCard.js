@@ -15,7 +15,7 @@ export const CourseCard = (props) => {
             <div className='flex flex-column relative'>
                 <div className="bg-w p-20-all ">
                     <div >
-                        <h2>{props.judul}</h2>
+                        <h3>{props.judul}</h3>
                     </div>
                     <div>
                         <p className='o-hide'>{props.deskripsi ? props.deskripsi : 'No Description'}</p>
