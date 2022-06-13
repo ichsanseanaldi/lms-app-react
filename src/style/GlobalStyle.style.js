@@ -18,8 +18,8 @@ export const GlobalStyled = createGlobalStyle`
 
     ul,ol,span,p,label,button,::placeholder{
         font-family:'Raleway', sans-serif ;
+        line-height:1.5 ;
         transition:0.3s ;
-        font-weight:500 ;
     }
 
     ul,ol{
