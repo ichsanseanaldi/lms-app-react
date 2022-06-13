@@ -70,9 +70,9 @@ export const CourseMateriSiswa = () => {
                                     </div>
                                     <div className='m-t-20'>
                                         <h3>Isi Materi:</h3>
-                                        <div className='bordered p-20-all border-round m-t-10 bg-w' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(e.course_materi.isi_materi) }} />
+                                        <div id='materi-wrapper' className='bordered p-20-all border-round m-t-10 bg-w' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(e.course_materi.isi_materi) }} />
                                     </div>
-                                    <div className='m-t-20 p-10-all'>
+                                    <div className='m-t-20 p-10-all' >
                                         <StyledButton width="100%" backgroundcolor={primary} color={white} onClick={toggler}>Selesai Materi</StyledButton>
                                     </div>
                                 </div>
