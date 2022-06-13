@@ -5,12 +5,15 @@ import { getAllSiswaThunk } from '../../redux/user/thunk';
 import { StyledContainer } from '../../style/components/StyledContainer';
 import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { Modal } from '../partials/Modal';
-import { NavBarSiswa } from '../partials/NavBarSiswa';
+import { NavBarGuru } from '../partials/NavBarGuru';
 import { TableRow } from '../partials/TableRow';
+import { NavBarSiswa } from '../partials/NavBarSiswa';
 
 export const Leaderboard = () => {
 
-    const [token, tokenExp] = useRefresh('siswa');
+    const role = localStorage.getItem('role');
+
+    const [token, tokenExp] = useRefresh(role);
 
     const siswa = useSelector(state => state.user.siswalist);
     const profil = useSelector(state => state.user.profil);
@@ -32,7 +35,7 @@ export const Leaderboard = () => {
 
     return (
         <StyledContainer flex="flex">
-            <NavBarSiswa />
+            {role === 'guru' ? <NavBarGuru /> : <NavBarSiswa />}
             <StyledWrapper>
                 <div className='w-100'>
                     <div className='flex flex-center leader-anim'>
@@ -114,10 +117,9 @@ export const Leaderboard = () => {
                                 width="100%"
                             />
                             {siswa.length > 0 ? siswa.map((e, i) => {
-                                console.log(e);
                                 return (
                                     <TableRow
-                                        currentName={profil.nama_siswa}
+                                        currentName={profil.nama_siswa ? profil.nama_siswa : ''}
                                         width="98%"
                                         iterate={i}
                                         backgroundcolor={mainColor[i]}

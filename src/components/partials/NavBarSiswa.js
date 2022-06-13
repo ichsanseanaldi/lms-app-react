@@ -28,7 +28,7 @@ export const NavBarSiswa = () => {
                 </button>
             </div>
             <div className='brand m-t-30'>
-                <b className='link-nav text-center'>
+                <b className='link-nav text-center caveat'>
                     <Link to={'/dashboard-siswa'}>
                         FWTL
                     </Link>

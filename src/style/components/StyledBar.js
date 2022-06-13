@@ -19,7 +19,7 @@ export const StyledBar = styled.div`
     position:relative;
     padding: 5px 10px ;
     z-index:2;
-    color:#303030 ;
+    color:#505050 ;
     font-weight:700 ;
     
     &::after{
@@ -42,6 +42,7 @@ export const StyledBar = styled.div`
         left:0 ;
         width:50px ;
         z-index:-1 ;
+        border-radius:5px ;
         animation: ${props => wave(props.data)} 1s infinite forwards ;
         background-color:#fff;
         opacity:0.1 ;
