@@ -1,6 +1,7 @@
-#materi-wrapper{
+#materi-wrapper > *{
     line-height: 2;
-    font-family: 'Raleway', sans-serif;
+    font-family: sans-serif;
+    font-size: 0.95em;
 }
 
 .caveat{
