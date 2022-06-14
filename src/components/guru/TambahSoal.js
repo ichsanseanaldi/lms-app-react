@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import useAxiosGetSingle from '../../hooks/useAxiosGetSingle';
 import { useRefresh } from '../../hooks/useRefresh';
 import { useDispatch } from 'react-redux';
@@ -25,7 +25,7 @@ export const TambahSoal = () => {
     const [optionD, setOptionD] = useState('');
     const [optionE, setOptionE] = useState('');
     const [optionKey, setOptionKey] = useState('');
-    const [pointSoal, setPointSoal] = useState(20);
+    const [pointSoal, setPointSoal] = useState(10);
 
     const [token, tokenExp] = useRefresh('guru');
 
@@ -65,7 +65,7 @@ export const TambahSoal = () => {
         setOptionC('')
         setOptionD('')
         setOptionE('')
-        setPointSoal(20)
+        setPointSoal(10)
     }
 
     return (
@@ -99,7 +99,7 @@ export const TambahSoal = () => {
                         <div className='p-10-all '>
                             <p>Point Soal</p>
                             <StyledSelect value={pointSoal} onChange={e => setPointSoal(e.target.value)}>
-                                <option value="20">20</option>
+                                <option value="10">10</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
                             </StyledSelect >
