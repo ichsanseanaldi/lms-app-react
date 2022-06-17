@@ -34,7 +34,6 @@ export const TambahSoal = () => {
 
     const exercise = useAxiosGetSingle(`course/get-course-exercise/${randomcode}`, token, tokenExp);
 
-
     const body = {
         nomorSoal: nomorSoal,
         pertanyaanSoal: pertanyaanSoal,
@@ -100,8 +99,7 @@ export const TambahSoal = () => {
                             <p>Point Soal</p>
                             <StyledSelect value={pointSoal} onChange={e => setPointSoal(e.target.value)}>
                                 <option value="10">10</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
+                                <option value="20">20</option>
                             </StyledSelect >
                         </div>
                         <div>
