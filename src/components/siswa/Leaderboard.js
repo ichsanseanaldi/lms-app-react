@@ -124,7 +124,7 @@ export const Leaderboard = () => {
                                         iterate={i}
                                         backgroundcolor={mainColor[i]}
                                         color={accentColor[i]}
-                                        ordinal={i <= 5 ? ordinal[i] : 'th'}
+                                        ordinal={i < 5 ? ordinal[i] : 'th'}
                                         nama={e.nama_siswa}
                                         avatar={e.avatarSvg}
                                         level={e.level_siswa}
