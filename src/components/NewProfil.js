@@ -91,7 +91,7 @@ export const NewProfil = () => {
                         :
 
                         <div className='flex flex-column flex-center'>
-                            <p>Pilih avatar mu!</p>
+                            <h3 className='m-t-20'>Pilih Avatar!</h3>
                             <div className='flex flex-wrap flex-center m-b-10 m-t-10'>
                                 {avatars.map((e) => {
                                     return (
