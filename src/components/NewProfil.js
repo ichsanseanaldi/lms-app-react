@@ -63,13 +63,6 @@ export const NewProfil = () => {
 
         <StyledContainer flex="flex" alignItems="center">
             <StyledWrapper flex="flex">
-                <div className='flex flex-column flex-center order-2'>
-                    <img className='svg w-h-50 m-t-20 m-b-20' src={img} alt="profil" />
-                    <div className='text-center'>
-                        <h1>Welcome Newcomers !</h1>
-                        <p>Sebelum mulai, tolong isi profilmu dulu ya...</p>
-                    </div>
-                </div>
                 <div className='flex flex-center m-t-20'>
 
                     {resRole === 'guru' ?
@@ -90,29 +83,34 @@ export const NewProfil = () => {
 
                         :
 
-                        <div className='flex flex-column flex-center'>
-                            <h3 className='m-t-20'>Pilih Avatar!</h3>
-                            <div className='flex flex-wrap flex-center m-b-10 m-t-10'>
-                                {avatars.map((e) => {
-                                    return (
-                                        <div key={e.id} className="m-lr-10 p-10-all flex flex-column flex-center">
-                                            <div className='avatar-svg' dangerouslySetInnerHTML={{ __html: e.svg }} />
-                                            <input className='m-t-10 radio' type="radio" name="svg" id={e.id} value={e.svg} onChange={e => setAvatar(e.target.value)} required />
-                                        </div>
-                                    )
-                                })
-                                }
+                        <div className='flex flex-center'>
+                            <div className='flex flex-center flex-column'>
+                                <h3 className='m-t-20'>Pilih Avatar!</h3>
+                                <div className='flex flex-wrap flex-center m-b-10 m-t-10'>
+                                    {avatars.map((e) => {
+                                        return (
+                                            <div key={e.id} className="m-lr-10 p-10-all flex flex-column flex-center">
+                                                <div className='avatar-svg' dangerouslySetInnerHTML={{ __html: e.svg }} />
+                                                <input className='m-t-10 radio' type="radio" name="svg" id={e.id} value={e.svg} onChange={e => setAvatar(e.target.value)} required />
+                                            </div>
+                                        )
+                                    })
+                                    }
+                                </div>
                             </div>
 
-                            < Form
-                                typeOne="text"
-                                nameOne="nama Siswa"
-                                onSubmit={post}
-                                onChangeOne={handleNamaSiswa}
-                                valueOne={namaSiswa}
-                                header='Profil Siswa'
-                                svg={svg}
-                            />
+                            <div className='flex flex-center m-t-10'>
+
+                                < Form
+                                    typeOne="text"
+                                    nameOne="nama Siswa"
+                                    onSubmit={post}
+                                    onChangeOne={handleNamaSiswa}
+                                    valueOne={namaSiswa}
+                                    header='Profil Siswa'
+                                    svg={svg}
+                                />
+                            </div>
 
                         </div>
 
