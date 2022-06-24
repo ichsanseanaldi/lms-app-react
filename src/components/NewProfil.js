@@ -83,7 +83,7 @@ export const NewProfil = () => {
 
                         :
 
-                        <div className='flex flex-center'>
+                        <div className='flex flex-center new-avatar-container'>
                             <div className='flex flex-center flex-column'>
                                 <h3 className='m-t-20'>Pilih Avatar!</h3>
                                 <div className='flex flex-wrap flex-center m-b-10 m-t-10'>
@@ -110,6 +110,7 @@ export const NewProfil = () => {
                                     header='Profil Siswa'
                                     svg={svg}
                                 />
+
                             </div>
 
                         </div>

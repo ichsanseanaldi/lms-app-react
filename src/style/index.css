@@ -552,6 +552,10 @@ a:hover .rotate-anim-hov{
         order: 2;
     }
 
+    .new-avatar-container{
+        flex-direction: column;
+    }
+
 }
 
 @media (max-width:700px){
