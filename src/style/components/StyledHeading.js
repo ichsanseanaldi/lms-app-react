@@ -14,10 +14,9 @@ const animate = keyframes`
 
 export const StyledHeading = styled.h1`
 
-    font-size: 3.5em ;
+    font-size: ${props => props.landing ? '4em' : '3.5em'} ;
     position:relative ;
     z-index: 1;
-    user-select:none ;
 
     &::after{
         content:'';
@@ -28,6 +27,7 @@ export const StyledHeading = styled.h1`
         bottom: 15px;
         z-index: -1;
         animation: ${animate} 0.5s ease-in-out normal forwards;
+        transition:0.5s all ;
     }
 
     @media (max-width:850px){

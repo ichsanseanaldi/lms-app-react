@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
 
-    width:95vw;
     margin: auto ;
     min-height:100vh ;
+    max-width:90% ;
 
     display:${props => props.flex};
     flex-direction:${props => props.direction} ;

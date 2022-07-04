@@ -5,7 +5,7 @@ export const NavBarLanding = () => {
     return (
         <div className='p-20-ub flex nav-main'>
             <div className='flex'>
-                <h2 className='link-nav-main'>
+                <h2 className='link-nav-main caveat'>
                     <Link to={'/'}>
                         FWTL
                     </Link>

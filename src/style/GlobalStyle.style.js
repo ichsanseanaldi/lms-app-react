@@ -20,6 +20,7 @@ export const GlobalStyled = createGlobalStyle`
         font-family:'Raleway', sans-serif ;
         line-height:1.5 ;
         transition:0.3s ;
+        font-weight:500 ;
     }
 
     ul,ol{

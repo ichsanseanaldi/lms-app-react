@@ -15,6 +15,7 @@ export const StyledWrapper = styled.div`
     justify-content:${props => props.justifyContent};
     align-items:${props => props.alignItems};
 
+
     @media (max-width:800px){
         padding:10px 0 0;
         margin:10px;
