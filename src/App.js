@@ -28,6 +28,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 
 import { GlobalStyled } from './style/GlobalStyle.style';
+import { BadgesDetail } from './components/siswa/BadgesDetail';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path='/course-exercise-siswa/:id' element={<CourseExerciseSiswa />} />
           <Route path='/search-course' element={<CariCourse />} />
           <Route path='/leaderboard' element={<Leaderboard />} />
+          <Route path='/badges' element={<BadgesDetail />} />
           {/* guru */}
           <Route path='/add-siswa' element={<TambahSiswa />} />
           <Route path='/dashboard-guru' element={<DashboardGuru />} />

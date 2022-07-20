@@ -7,6 +7,11 @@
     line-height: 2.5 !important;
 }
 
+.badges-mini{
+   height: 50px !important;
+   width: 50px !important;
+}
+
 .caveat{
     font-family: 'caveat';
 }

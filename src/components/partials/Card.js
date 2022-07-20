@@ -11,7 +11,7 @@ export const Card = (props) => {
                 <p className='card-header'> {props.judul}</p>
                 <StyledHeading>
                     <i>
-                        {props.value}
+                        {props.value} {props.clickable && props.value > 0 ? '>' : ''}
                     </i>
                 </StyledHeading>
             </div>
