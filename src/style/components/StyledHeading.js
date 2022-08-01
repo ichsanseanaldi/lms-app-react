@@ -14,7 +14,7 @@ const animate = keyframes`
 
 export const StyledHeading = styled.h1`
 
-    font-size: ${props => props.landing ? '4em' : '3em'} ;
+    font-size: ${props => props.landing ? '3.8em' : '3em'} ;
     position:relative ;
     z-index: 1;
 

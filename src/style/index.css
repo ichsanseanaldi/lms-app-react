@@ -257,6 +257,11 @@
     z-index: 999;
 }
 
+.fixed-2{
+    position:fixed;
+    z-index: 998;
+}
+
 .full{
    inset: 0;
 }
@@ -389,90 +394,26 @@ a:hover .rotate-anim-hov{
 	        animation: leaderboardAnim 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
-.borders {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
-    width: 50px; 
-}
-
-.borders:after, .borders:before {
-      border: 6px solid #202020;
-      border-radius: 100%;
-      position: absolute;
-      content: '';
-      display: block; 
-}
-
 .borders:before {
-      border-bottom-color: transparent;
-      border-left-color: transparent;
-      animation: spin .75s infinite linear reverse;
-      height: 30px;
-      width: 30px; 
-}
-
-.borders:after {
-      -webkit-animation: spin .5s infinite linear;
-              animation: spin .5s infinite linear;
-      height: 50px;
-      width: 50px;
-      border-right-color: transparent;
-      border-top-color: transparent; 
-}
+    -webkit-animation: spin 0.5s infinite linear;
+            animation: spin 0.5s infinite linear;
+    border-radius: 100%;
+    border-top: 6px solid var(--primary, black);
+    content: '';
+    display: block;
+    height: 50px;
+    width: 50px; }
   
   @-webkit-keyframes spin {
     to {
       -webkit-transform: rotate(360deg);
-              transform: rotate(360deg); } 
-    }
+              transform: rotate(360deg); } }
   
   @keyframes spin {
     to {
       -webkit-transform: rotate(360deg);
-              transform: rotate(360deg); } 
-    }
-
-    @-webkit-keyframes leaderboardAnim {
-        0% {
-          -webkit-transform: rotateX(-100deg);
-                  transform: rotateX(-100deg);
-          -webkit-transform-origin: top;
-                  transform-origin: top;
-          opacity: 0;
-        }
-        100% {
-          -webkit-transform: rotateX(0deg);
-                  transform: rotateX(0deg);
-          -webkit-transform-origin: top;
-                  transform-origin: top;
-          opacity: 1;
-        }
-      }
-      @keyframes leaderboardAnim {
-        0% {
-          -webkit-transform: rotateX(-100deg);
-                  transform: rotateX(-100deg);
-          -webkit-transform-origin: top;
-                  transform-origin: top;
-          opacity: 0;
-        }
-        100% {
-          -webkit-transform: rotateX(0deg);
-                  transform: rotateX(0deg);
-          -webkit-transform-origin: top;
-                  transform-origin: top;
-          opacity: 1;
-        }
-      }
+              transform: rotate(360deg); } }
+  
 
 
 @media (max-width:1100px){

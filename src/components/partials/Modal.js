@@ -2,6 +2,7 @@ import React from 'react'
 import { magenta, primary, white } from '../../style/ColorVariable'
 import { StyledButton } from '../../style/components/StyledButton'
 
+
 export const Modal = (props) => {
 
     return (
@@ -18,30 +19,38 @@ export const Modal = (props) => {
                 <div className='bg-w p-20-all text-center border-round'>
                     {props.data && props.data.length > 0 ?
 
-                        <div className='p-20-all'>
-                            <h2>Kamu mendapatkan reward!!</h2>
-                            <div className='flex flex-center'>
-                                {props.data.map(e => {
-                                    return (
-                                        <div className='text-center flex-only flex-column flex-center b-card' key={e.id_badges}>
-                                            <div className='flex flex-center'>
-                                                <div dangerouslySetInnerHTML={{ __html: e.badge_svg }} />
+                        <div>
+
+                            <div className="pyro full">
+                                <div className="before"></div>
+                                <div className="after"></div>
+                            </div>
+
+                            <div className='p-20-all'>
+                                <h2>Kamu mendapatkan reward!!</h2>
+                                <div className='flex flex-center'>
+                                    {props.data.map(e => {
+                                        return (
+                                            <div className='text-center flex-only flex-column flex-center b-card' key={e.id_badges}>
+                                                <div className='flex flex-center'>
+                                                    <div dangerouslySetInnerHTML={{ __html: e.badge_svg }} />
+                                                </div>
+                                                <div>
+                                                    <h2 className='caveat p-10-all'>{e.nama_badges}</h2>
+                                                    <p className='p-10-all o-hide'>{e.deskripsi_badges}</p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <h2 className='caveat p-10-all'>{e.nama_badges}</h2>
-                                                <p className='p-10-all o-hide'>{e.deskripsi_badges}</p>
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                                }
+                                        )
+                                    })
+                                    }
+                                </div>
                             </div>
                             {
                                 props.result &&
                                 <div>
-                                    <p>Benar : {props.result.benar}</p>
-                                    <p>Salah : {props.result.salah}</p>
-                                    <p>Point yang didapat : {props.result.point}</p>
+                                    <p>Benar : <strong>{props.result.benar}</strong></p>
+                                    <p>Salah : <strong>{props.result.salah}</strong></p>
+                                    <p>Point yang didapat : <strong>{props.result.point}</strong></p>
                                 </div>
                             }
                         </div>

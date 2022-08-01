@@ -116,7 +116,7 @@ export const Leaderboard = () => {
                                 title={true}
                                 width="100%"
                             />
-                            {siswa.length > 0 ? siswa.map((e, i) => {
+                            {!load ? siswa.length > 0 ? siswa.map((e, i) => {
                                 return (
                                     <TableRow
                                         currentName={profil.nama_siswa ? profil.nama_siswa : ''}
@@ -136,6 +136,13 @@ export const Leaderboard = () => {
                                 :
 
                                 <div className='m-t-20 p-20-all flex flex-column flex-center'>
+                                    <h1 className='m-t-20'>Siswa Empty.</h1>
+                                </div>
+
+
+                                :
+
+                                <div className='m-t-20 p-20-all flex flex-column flex-center'>
                                     <div className='borders p-20-all'></div>
                                     <h1 className='m-t-20'>Loading...</h1>
                                 </div>
@@ -146,14 +153,6 @@ export const Leaderboard = () => {
                         </div>
                     </div>
                 </div>
-                {
-                    load &&
-
-                    <Modal
-                        load={true}
-                    />
-
-                }
             </StyledWrapper>
         </StyledContainer >
 

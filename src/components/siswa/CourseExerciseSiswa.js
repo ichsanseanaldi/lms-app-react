@@ -34,7 +34,7 @@ export const CourseExerciseSiswa = () => {
     }, [dispatch])
 
     const body = {
-        jawaban: optionKey,
+        jawaban: optionKey.sort((a, b) => a.idSoal > b.idSoal ? 1 : -1),
         idexercise: id
     }
 
@@ -70,6 +70,9 @@ export const CourseExerciseSiswa = () => {
     const done = () => {
         navigate(`/dashboard-siswa`, { replace: true })
     }
+
+    // console.log(optionKey.sort((a, b) => a.idSoal > b.idSoal ? 1 : -1));
+
 
     return (
         <StyledContainer flex="flex">
