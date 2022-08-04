@@ -13,6 +13,19 @@ const wave = props => keyframes`
 
 `
 
+const progress = props => keyframes`
+
+    0%{
+        width:0 ;
+    }
+    100%{
+        width:${props}% ;
+    }
+
+
+`
+
+
 export const StyledBar = styled.div`
 
     text-align:center;
@@ -32,6 +45,7 @@ export const StyledBar = styled.div`
         z-index:-2 ;
         border-radius:5px ;
         background: #1DCDFF;
+        animation: ${props => progress(props.data)} 3s forwards;
     }
 
     &::before{

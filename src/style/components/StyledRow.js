@@ -12,7 +12,12 @@ export const StyledRow = styled.div`
     padding: ${props => props.title ? '10px' : '5px'} 20px;
     margin: 5px auto ;
     user-select:none;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.3) ;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    transition: 0.5s;
+
+    &:hover{
+        transform:${props => props.title ? 'scale(1)' : 'scale(1.05)'} ;
+    }
 
     @media (max-width:700px){
         font-size:${props => props.ordinal === 'st' ? '1rem' : '0.9rem'};

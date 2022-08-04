@@ -571,7 +571,7 @@ a:hover .rotate-anim-hov{
     }
 
     .hidden{
-        left: -80px;
+        transform: translateX(-80px);
     }
 
     .link-nav{

@@ -116,38 +116,38 @@ export const Leaderboard = () => {
                                 title={true}
                                 width="100%"
                             />
-                            {!load ? siswa.length > 0 ? siswa.map((e, i) => {
-                                return (
-                                    <TableRow
-                                        currentName={profil.nama_siswa ? profil.nama_siswa : ''}
-                                        width="98%"
-                                        iterate={i}
-                                        backgroundcolor={mainColor[i]}
-                                        color={accentColor[i]}
-                                        ordinal={i < 5 ? ordinal[i] : 'th'}
-                                        nama={e.nama_siswa}
-                                        avatar={e.avatarSvg}
-                                        level={e.level_siswa}
-                                        point={e.point_siswa}
-                                    />
-                                )
-                            })
 
-                                :
-
-                                <div className='m-t-20 p-20-all flex flex-column flex-center'>
-                                    <h1 className='m-t-20'>Siswa Empty.</h1>
-                                </div>
-
-
-                                :
+                            {load ?
 
                                 <div className='m-t-20 p-20-all flex flex-column flex-center'>
                                     <div className='borders p-20-all'></div>
                                     <h1 className='m-t-20'>Loading...</h1>
                                 </div>
 
+                                :
 
+                                siswa.length > 0 ? siswa.map((e, i) => {
+                                    return (
+                                        <TableRow
+                                            currentName={profil.nama_siswa ? profil.nama_siswa : ''}
+                                            width="98%"
+                                            iterate={i}
+                                            backgroundcolor={mainColor[i]}
+                                            color={accentColor[i]}
+                                            ordinal={i < 5 ? ordinal[i] : 'th'}
+                                            nama={e.nama_siswa}
+                                            avatar={e.avatarSvg}
+                                            level={e.level_siswa}
+                                            point={e.point_siswa}
+                                        />
+                                    )
+                                })
+
+                                    :
+
+                                    <div className='m-t-20 p-20-all flex flex-column flex-center'>
+                                        <h1 className='m-t-20'>Siswa Empty.</h1>
+                                    </div>
 
                             }
                         </div>
