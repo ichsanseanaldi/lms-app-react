@@ -13,7 +13,7 @@ export const StyledRow = styled.div`
     margin: 5px auto ;
     user-select:none;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    transition: 0.5s;
+    transition: 0.8s cubic-bezier(0, 0.7, 0.4, 1);
 
     &:hover{
         transform:${props => props.title ? 'scale(1)' : 'scale(1.05)'} ;

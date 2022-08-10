@@ -15,7 +15,7 @@ export const StyledCard = styled.div`
 	box-shadow:5px 5px 10px rgba(0,0,0,0.2);
     
     .svg-card{
-        animation: myAnim 2s ease 0s 1 normal forwards;
+        animation: myAnim 2s cubic-bezier(0, 0.7, 0.4, 1) 0s 1 normal forwards;
     }
 
 	@media (max-width:920px){

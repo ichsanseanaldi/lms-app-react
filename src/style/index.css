@@ -216,7 +216,7 @@
 }
 
 .b-card{
-    transition: 0.5s;
+    transition: 0.5s cubic-bezier(0, 0.7, 0.4, 1);
     transform: scale(0.8);
     cursor:pointer ;
 }
@@ -336,7 +336,7 @@
     background-color: #202020;
     border-radius: 5px;
     transform-origin: left ;
-    transition: 0.4s;
+    transition: 0.4s cubic-bezier(0, 0.7, 0.4, 1);
 
 }
 
@@ -382,7 +382,7 @@
 }
 
 .rotate-anim-hov{
-    transition: 0.5s;
+    transition: 0.8s cubic-bezier(0, 0.7, 0.4, 1);
 }
 
 a:hover .rotate-anim-hov{

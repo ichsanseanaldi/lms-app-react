@@ -45,7 +45,7 @@ export const StyledBar = styled.div`
         z-index:-2 ;
         border-radius:5px ;
         background: #1DCDFF;
-        animation: ${props => progress(props.data)} 3s forwards;
+        animation: ${props => progress(props.data)} 3s cubic-bezier(0, 0.7, 0.4, 1) forwards;
     }
 
     &::before{
