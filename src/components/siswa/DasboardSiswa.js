@@ -47,7 +47,7 @@ export const DashboardSiswa = () => {
                                     <p>Selamat datang di dashboard, kamu bisa melihat statistik mu dibawah!</p>
                                 </div>
                             </div>
-                            <div className='flex flex-column'>
+                            <div className='flex flex-column ava-container p-20-lr m-t-10'>
                                 <div className='flex flex-center m-t-10 ava-wrapper '>
                                     <div className='m-t-10 p-10-all flex-only flex-center flex-column avatar-svg-wrap'>
                                         <div className='avatar-svg-dashboard' dangerouslySetInnerHTML={{ __html: profil.avatarSvg }} />

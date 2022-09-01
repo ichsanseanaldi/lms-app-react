@@ -26,7 +26,8 @@ export const StyledHeading = styled.h1`
         left: 0;
         bottom: 15px;
         z-index: -1;
-        animation: ${animate} 0.5s cubic-bezier(0, 0.7, 0.4, 1) normal forwards;
+        height:20px ;
+        /* animation: ${animate} 0.5s cubic-bezier(0, 0.7, 0.4, 1) normal forwards; */
         transition:0.5s all ;
     }
 

@@ -1,5 +1,35 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+const myAnim = keyframes`
+
+	0%,
+	100% {
+		transform: translateX(0%) scale(0.7) ; 
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg) scale(0.7) ;
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg) scale(0.7) ;
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg) scale(0.7) ;
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg) scale(0.7) ;
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg) scale(0.7) ;
+	}
+
+
+`
 
 export const StyledCard = styled.div`
 
@@ -13,9 +43,13 @@ export const StyledCard = styled.div`
 	background-color:${props => props.bordercolor} ;
     /* border : 2px solid ${props => props.bordercolor}; */
 	box-shadow:5px 5px 10px rgba(0,0,0,0.2);
-    
-    .svg-card{
-        animation: myAnim 2s cubic-bezier(0, 0.7, 0.4, 1) 0s 1 normal forwards;
+
+	.svg-card{
+		transform:scale(0.7);
+	}
+
+    &:hover .svg-card{
+        animation: ${myAnim} 2s cubic-bezier(0, 0.7, 0.4, 1) 0s 1 normal forwards;
     }
 
 	@media (max-width:920px){
@@ -29,35 +63,6 @@ export const StyledCard = styled.div`
 		}
 
 	}
-
-    @keyframes myAnim {
-	0%,
-	100% {
-		transform: translateX(0%) scale(0.7);
-		transform-origin: 50% 50%;
-	}
-
-	15% {
-		transform: translateX(-30px) rotate(-6deg) scale(0.7);
-	}
-
-	30% {
-		transform: translateX(15px) rotate(6deg) scale(0.7);
-	}
-
-	45% {
-		transform: translateX(-15px) rotate(-3.6deg) scale(0.7);
-	}
-
-	60% {
-		transform: translateX(9px) rotate(2.4deg) scale(0.7);
-	}
-
-	75% {
-		transform: translateX(-6px) rotate(-1.2deg) scale(0.7);
-	}
-}
-
  
     
 `

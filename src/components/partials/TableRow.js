@@ -16,7 +16,7 @@ export const TableRow = (props) => {
                 <div className='flex flex-center-around-rev'>
                     <div className='flex flex-center'>Avatar</div>
                     <div className='flex flex-center'>Rank</div>
-                    <div className='flex flex-center'>Nama</div>
+                    <div className='flex flex-center'>Name</div>
                     <div className='flex flex-center'>Point</div>
                     <div className='flex flex-center'>Level</div>
                 </div>

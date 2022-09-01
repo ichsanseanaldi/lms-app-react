@@ -307,6 +307,13 @@
     overflow: auto;
 }
 
+.ava-container{
+    background-color: #fff;
+    border-radius: 15px;
+    border:1px solid #eee;
+    box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+}
+
 .avatar-svg{
     width: 50px;
     height: 50px;
