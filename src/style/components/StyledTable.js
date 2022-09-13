@@ -9,7 +9,7 @@ export const StyledTable = styled.table`
     position: relative ;
     border-collapse:collapse;
     border:1px solid black;
-    border-radius:5px ;
+    /* border-radius:5px ; */
     overflow:auto;
     
     td,th{

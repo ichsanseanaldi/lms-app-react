@@ -38,7 +38,7 @@ export const StyledCard = styled.div`
     margin: 10px ;
     padding: 10px 0 ;
     display: flex ;
-    border-radius:10px ;
+    /* border-radius:10px ; */
 	color: #FFF ;
 	background-color:${props => props.bordercolor} ;
     /* border : 2px solid ${props => props.bordercolor}; */

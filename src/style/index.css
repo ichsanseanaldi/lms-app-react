@@ -231,7 +231,7 @@
     background-color: #1DCDFF;
     color:#E8F0F9;
     width: 50%;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     font-weight:500;
     font-family:inherit ;
 }
@@ -243,10 +243,10 @@
 .bordered{
     border:1px solid #d7d7d7;
 }
-
+/* 
 .border-round{
     border-radius: 10px;
-}
+} */
 
 .relative{
     position: relative;
@@ -309,7 +309,7 @@
 
 .ava-container{
     background-color: #fff;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     border:1px solid #eee;
     box-shadow:0px 0px 10px rgba(0,0,0,0.2);
 }
@@ -331,7 +331,7 @@
 .btn-toggle{
     display: none;
     background-color: #fff;
-    border-radius: 0 0 10px 0;
+    /* border-radius: 0 0 10px 0; */
     padding:10px;
 }
 
@@ -341,7 +341,7 @@
     margin: 10px 0 0;
     height: 3px;
     background-color: #202020;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     transform-origin: left ;
     transition: 0.4s cubic-bezier(0, 0.7, 0.4, 1);
 
