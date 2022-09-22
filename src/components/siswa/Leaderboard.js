@@ -50,7 +50,7 @@ export const Leaderboard = () => {
                                 width="100%"
                             />
 
-                            {load ?
+                            {load && siswa.length < 0 ?
 
                                 <div className='m-t-20 p-20-all flex flex-column flex-center'>
                                     <div className='borders p-20-all'></div>

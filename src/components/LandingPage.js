@@ -4,7 +4,7 @@ import { StyledContainer } from '../style/components/StyledContainer'
 import { StyledWrapper } from '../style/components/StyledWrapper'
 import { NavBarLanding } from './partials/NavBar'
 import { StyledHeading } from '../style/components/StyledHeading'
-import { orange, primary, white } from '../style/ColorVariable'
+import { primary, white } from '../style/ColorVariable'
 import { StyledButton } from '../style/components/StyledButton'
 import bg from '../assets/gamification.png'
 

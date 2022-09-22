@@ -10,7 +10,7 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        font-family: 'Fredoka One', sans-serif;
+        font-family: 'Fredoka One', cursive;
         font-size: 16px;
         color:#303030;
         background-color:#F0F0F0 ;
