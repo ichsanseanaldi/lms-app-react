@@ -7,13 +7,10 @@ export const StyledRow = styled.div`
     font-size:${props => props.ordinal === 'st' || props.title ? '1.2rem' : '1rem'};
     background-color:${props => props.title ? '#303030' : props.backgroundcolor} ;
     color:${props => props.title ? 'white' : props.color} ;
-    /* border-radius:10px; */
-    /* width:${props => props.title ? '100%' : props.width}; */
     width:100% ;
     padding: ${props => props.title ? '10px' : '5px'} 20px;
     margin: 0 auto ;
     user-select:none;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     transition: 0.8s cubic-bezier(0, 0.7, 0.4, 1);
 
     &:hover{

@@ -14,11 +14,11 @@ export const TableRow = (props) => {
             {props.title ?
 
                 <div className='flex flex-center-around-rev'>
-                    <div className='flex flex-center'>Avatar</div>
-                    <div className='flex flex-center'>Rank</div>
-                    <div className='flex flex-center'>Name</div>
-                    <div className='flex flex-center'>Point</div>
-                    <div className='flex flex-center'>Level</div>
+                    <h1 className='flex flex-center'>Avatar</h1>
+                    <h1 className='flex flex-center'>Rank</h1>
+                    <h1 className='flex flex-center'>Name</h1>
+                    <h1 className='flex flex-center'>Point</h1>
+                    <h1 className='flex flex-center'>Level</h1>
                 </div>
 
                 :
@@ -28,24 +28,24 @@ export const TableRow = (props) => {
                         <div className='avatar-svg' dangerouslySetInnerHTML={{ __html: props.avatar }} />
                     </div>
                     <div className='flex flex-center'>
-                        <h1>
+                        <p>
                             {props.iterate + 1}{props.ordinal}
-                        </h1>
+                        </p>
                     </div>
                     <div className='flex flex-center'>
-                        <h1>
+                        <p>
                             {props.nama}{props.nama === props.currentName ? ' (you)' : ''}
-                        </h1>
+                        </p>
                     </div>
                     <div className='flex flex-center'>
-                        <h1>
+                        <p>
                             {props.point}
-                        </h1>
+                        </p>
                     </div>
                     <div className='flex flex-center'>
-                        <h1>
+                        <p>
                             {props.level}
-                        </h1>
+                        </p>
                     </div>
                 </div>
 
