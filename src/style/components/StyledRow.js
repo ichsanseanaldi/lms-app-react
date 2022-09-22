@@ -4,11 +4,11 @@ import styled from 'styled-components';
 export const StyledRow = styled.div`
 
     font-family: 'Kalam', sans-serif;
-    font-size:${props => props.ordinal === 'st' || props.title ? '1.2rem' : '1rem'};
+    font-size:${props => props.ordinal === 'st' || props.title ? '0.8rem' : '1rem'};
     background-color:${props => props.title ? '#303030' : props.backgroundcolor} ;
     color:${props => props.title ? 'white' : props.color} ;
     width:100% ;
-    padding: ${props => props.title ? '10px' : '5px'} 20px;
+    padding: 5px 20px;
     margin: 0 auto ;
     user-select:none;
     transition: 0.8s cubic-bezier(0, 0.7, 0.4, 1);
