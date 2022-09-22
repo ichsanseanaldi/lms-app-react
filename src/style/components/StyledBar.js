@@ -34,6 +34,7 @@ export const StyledBar = styled.div`
     z-index:2;
     color:#505050 ;
     font-weight:700 ;
+    font-family:'Raleway', sans-serif ;
     
     &::after{
         content:'';

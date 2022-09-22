@@ -27,14 +27,7 @@ export const NavBarSiswa = () => {
                     <div></div>
                 </button>
             </div>
-            <div className='brand m-t-30'>
-                <b className='link-nav text-center caveat'>
-                    <Link to={'/dashboard-siswa'}>
-                        FWTL
-                    </Link>
-                </b>
-            </div>
-            <div>
+            <div className='m-t-30'>
                 <div className='link-nav m-t-20'>
                     <Link to={'/dashboard-siswa'}>
                         <svg width="50" height="50" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">

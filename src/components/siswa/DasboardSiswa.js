@@ -87,7 +87,7 @@ export const DashboardSiswa = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='text-center p-10-all badges-title'>
+                            <div className='text-center p-10-all badges-title m-t-20'>
                                 <h1>Statistics</h1>
                             </div>
                             <div className='flex flex-wrap flex-center m-t-10 p-20-lr course-wrapper '>

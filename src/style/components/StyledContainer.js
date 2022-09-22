@@ -4,7 +4,7 @@ export const StyledContainer = styled.div`
 
     margin: auto ;
     min-height:100vh ;
-    max-width:1200px;
+    max-width:1300px;
 
     display:${props => props.flex};
     flex-direction:${props => props.direction} ;

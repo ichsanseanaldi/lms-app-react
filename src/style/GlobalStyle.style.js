@@ -10,10 +10,10 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Fredoka One', sans-serif;
         font-size: 16px;
-        color:#303030 ;
-        background-color:#FAFAFA ;
+        color:#303030;
+        background-color:#F0F0F0 ;
     }
 
     ul,ol,span,p,label,button,::placeholder{
