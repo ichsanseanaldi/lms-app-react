@@ -75,8 +75,8 @@ export const DashboardSiswa = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='flex m-all-10'>
-                                    <div className='flex flex-center'>
+                                <div className='flex m-all-10 '>
+                                    <div className='flex flex-center flex-wrap'>
                                         {badges.length > 0 && badges.map(e => {
                                             return (
                                                 <div className='p-10-all'>

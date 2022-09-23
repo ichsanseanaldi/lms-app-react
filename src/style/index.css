@@ -599,6 +599,12 @@ a:hover .rotate-anim-hov{
         margin: 15px 0;
     }
 
+    .landing-png img{
+        width: 150px;
+        height: 150px;
+        margin: 10px 0;
+    }
+
   
 }
 
