@@ -7,7 +7,7 @@ export const StyledButton = styled.button`
     margin: 10px 0;
     /* border-radius:5px; */
     font-weight:700;
-    font-family:'Raleway', sans-serif;
+    font-family:'Roboto', sans-serif;
     
     width:${props => props.width};
     color: ${props => props.color} ;

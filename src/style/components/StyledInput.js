@@ -7,7 +7,7 @@ export const StyledInput = styled.input`
     padding:10px 15px;
     margin:5px 0 ;
     width:100% ;
-    font-family:'Raleway', sans-serif;
+    font-family:'Roboto', sans-serif;
 
 
 `
