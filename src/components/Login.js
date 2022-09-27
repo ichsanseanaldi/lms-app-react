@@ -98,7 +98,7 @@ export const Login = () => {
                 }
             </StyledWrapper>
             <div className='m-t-20 c-grey'>
-                <p>trial acc - id &amp; password : test123</p>
+                <p>trial acc : test123</p>
             </div>
         </StyledContainer>
     )
