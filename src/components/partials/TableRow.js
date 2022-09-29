@@ -14,11 +14,11 @@ export const TableRow = (props) => {
             {props.title ?
 
                 <div className='flex flex-center-around-rev'>
-                    <h1 className='flex flex-center'>Avatar</h1>
-                    <h1 className='flex flex-center'>Rank</h1>
-                    <h1 className='flex flex-center'>Name</h1>
-                    <h1 className='flex flex-center'>Point</h1>
-                    <h1 className='flex flex-center'>Level</h1>
+                    <h4 className='flex flex-center'>Avatar</h4>
+                    <h4 className='flex flex-center'>Rank</h4>
+                    <h4 className='flex flex-center'>Name</h4>
+                    <h4 className='flex flex-center'>Point</h4>
+                    <h4 className='flex flex-center'>Level</h4>
                 </div>
 
                 :
