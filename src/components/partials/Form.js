@@ -11,10 +11,10 @@ export const Form = (props) => {
         <div>
 
             <StyledForm onSubmit={props.onSubmit} width="400px" height="500px" >
-                <div className='flex flex-center' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.svg) }} />
-                <div className='text-center m-t-10 m-b-20'>
+                {/* <div className='flex flex-center' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.svg) }} /> */}
+                {/* <div className='text-center m-t-10 m-b-20'>
                     <p className='form-header'>{props.header}</p>
-                </div>
+                </div> */}
                 {props.err &&
                     <div className='text-center red'>
                         <strong>
@@ -39,6 +39,10 @@ export const Form = (props) => {
                     }
                 </div>
                 <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>
+                <p className='red'>Due to changes for Database Hobby Plans in Heroku as hosting provider, 
+                    the whole backend functionality will be disabled from 28-Nov-2022, 
+                    any and all interactions after login will be inaccessible.</p>
+                <p className='m-t-10'>However, the source code will be available in <a style={{display:'inline',color:'blue',textDecoration:'underline'}} href="https://github.com/ichsanseanaldi" target="_blank">Github</a></p>
             </StyledForm>
         </div>
     )

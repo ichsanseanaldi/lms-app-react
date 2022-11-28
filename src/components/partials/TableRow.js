@@ -10,6 +10,7 @@ export const TableRow = (props) => {
             width={props.width}
             color={props.color}
             ordinal={props.ordinal}
+            iterate={props.iterate}
         >
             {props.title ?
 

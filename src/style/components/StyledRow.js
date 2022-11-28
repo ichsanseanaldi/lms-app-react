@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledRow = styled.div`
 
-    font-family: 'Kalam', sans-serif;
+    font-family: 'Kalam', sans-serif !important;
     font-size:${props => props.iterate === 1 ? '1.1rem' : '1rem'};
     background-color:${props => props.title ? '#303030' : props.backgroundcolor} ;
     color:${props => props.title ? 'white' : props.color} ;
