@@ -39,10 +39,18 @@ export const Form = (props) => {
                     }
                 </div>
                 <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>
-                <p className='red'>Due to changes for Database Hobby Plans in Heroku as hosting provider, 
-                    the whole backend functionality will be disabled from 28-Nov-2022, 
-                    any and all interactions after login will be inaccessible.</p>
-                <p className='m-t-10'>However, the source code will be available in <a style={{display:'inline',color:'blue',textDecoration:'underline'}} href="https://github.com/ichsanseanaldi" target="_blank">Github</a></p>
+                <p className='red'>
+                    Due to Terms Changes in Heroku as hosting provider, 
+                    the whole backend functionality will be disturbed or maybe disabled from 28-Nov-2022, 
+                    any and all interactions after login might be inaccessible.
+                    ---Should you wish to try, The username and password are 'test123'
+                </p>
+                <p className='m-t-10'>
+                    However, the source code are available in 
+                    <a style={{display:'inline',color:'blue',textDecoration:'underline'}} href="https://github.com/ichsanseanaldi" target="_blank">
+                        My Github
+                    </a>
+                </p>
             </StyledForm>
         </div>
     )
