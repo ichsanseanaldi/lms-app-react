@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
     color: ${props => props.color} ;
     background-color:${props => props.backgroundcolor};
     text-align:${props => props.textAlign};
-    border:${props=>props.main && '2px solid black'};
+    border:${props=>props.main && '2px solid #303030'};
 
     @media (max-width:800px){
         width:${props => props.main && '50%'};

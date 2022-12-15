@@ -31,7 +31,7 @@ export const LandingPage = () => {
                     <StyledButton
                         as={Link}
                         to={'/login'}
-                        color={black}
+                        color='#303030'
                         width="20%"
                         textAlign="center"
                         main
