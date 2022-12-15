@@ -1,32 +1,18 @@
 import styled from 'styled-components';
+import { primary, yellow } from '../ColorVariable';
 
 export const StyledHeading = styled.h1`
 
-    font-size: ${props => props.landing ? '3.8em' : '3em'} ;
+    font-size: ${props => props.landing ? '64px' : '3em'} ;
     position:relative ;
     z-index: 1;
-
-    &::after{
-        content:'';
-        position:absolute;
-        z-index: -1;
-        width:100% ;
-        height:10px ;
-        left: 0;
-        bottom: 10px;
-        background-color:${props => props.backgroundcolor};
-        transition:0.5s all ;
-    }
-
-    @media (max-width:850px){
-        font-size:3em ;
-    }
+    font-weight:bolder;
+    color:${props => props.backgroundcolor};
+    text-shadow: 5px 5px 0px ${primary}, 9px 9px 0px ${yellow};
+    -webkit-text-stroke:1px black;
 
     @media (max-width:800px){
-        font-size:2em ;
-        &::after{
-            display:none ;
-        }
+        font-size: ${props => props.landing && '46px'};
     }
 
 `

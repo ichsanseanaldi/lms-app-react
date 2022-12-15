@@ -12,5 +12,11 @@ export const StyledButton = styled.button`
     width:${props => props.width};
     color: ${props => props.color} ;
     background-color:${props => props.backgroundcolor};
+    text-align:${props => props.textAlign};
+    border:${props=>props.main && '2px solid black'};
+
+    @media (max-width:800px){
+        width:${props => props.main && '50%'};
+    }
 
 `

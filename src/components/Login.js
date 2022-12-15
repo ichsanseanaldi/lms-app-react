@@ -64,11 +64,11 @@ export const Login = () => {
 
     return (
 
-        <StyledContainer main>
+        <StyledContainer>
 
             <NavBarLanding />
 
-            <StyledWrapper flex="flex" direction="column" justifyContent="center" alignItems="center" main>
+            <StyledWrapper flex="flex" direction="column" justifyContent="center" alignItems="center">
 
                 <Form
                     login

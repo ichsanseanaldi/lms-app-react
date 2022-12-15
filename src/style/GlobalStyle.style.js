@@ -10,21 +10,21 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        font-family: 'Fredoka One', cursive;
+        font-family: 'Poppins', Arial, sans-serif;
         font-size: 16px;
         color:#303030;
-        background-color:#F0F0F0 ;
+        background-color:#FFF;
+        line-height:1.5 ;
+        user-select:none;
     }
 
-    ul,ol,span,p,label,button,::placeholder{
-        font-family:'Roboto', sans-serif ;
-        line-height:1.5 ;
+   a,ul,ol,span,p,label,button,::placeholder{
+        font-family:'Poppins', Arial, sans-serif ;
         transition:0.3s ;
-        font-weight:500 ;
+        font-weight:300 ;
     }
 
     ul,ol{
-        line-height:1.5 ;
         margin-left:2rem ;
     }
 
@@ -32,7 +32,6 @@ export const GlobalStyled = createGlobalStyle`
         display:block;
         color:inherit;
         text-decoration:none ;
-        transition:0.5s ;
 
         &:hover{
             opacity:0.5;
@@ -49,10 +48,6 @@ export const GlobalStyled = createGlobalStyle`
             opacity:0.5 ;
         }
 
-    }
-
-    p{
-        line-height:1.5 ;
     }
 
     label,::placeholder{

@@ -313,8 +313,8 @@
 }
 
 .landing-png img{
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     object-fit:contain;
     opacity: 0.84;
 }
@@ -600,9 +600,7 @@ a:hover .rotate-anim-hov{
     }
 
     .landing-png img{
-        width: 150px;
-        height: 150px;
-        margin: 10px 0;
+        margin-bottom:3rem;
     }
 
   

@@ -11,10 +11,7 @@ export const Form = (props) => {
         <div>
 
             <StyledForm onSubmit={props.onSubmit} width="400px" height="500px" >
-                {/* <div className='flex flex-center' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.svg) }} /> */}
-                {/* <div className='text-center m-t-10 m-b-20'>
-                    <p className='form-header'>{props.header}</p>
-                </div> */}
+          
                 {props.err &&
                     <div className='text-center red'>
                         <strong>
