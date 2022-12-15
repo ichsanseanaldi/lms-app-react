@@ -41,7 +41,7 @@ export const Form = (props) => {
                 <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>
                 <p className='red'>
                     Due to Terms Changes in Heroku as hosting provider, 
-                    the whole backend functionality will be disturbed or maybe disabled start from 28-Nov-2022, 
+                    the whole backend functionality will be disabled start from 28-Nov-2022, 
                     any and all interactions after login might be inaccessible.
                 </p>
                 <p className='m-t-10'>
