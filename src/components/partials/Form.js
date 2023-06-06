@@ -3,7 +3,6 @@ import { StyledButton } from '../../style/components/StyledButton'
 import { StyledForm } from '../../style/components/StyledForm'
 import { InputGroup } from './InputGroup'
 import { primary, white } from '../../style/ColorVariable'
-import DOMPurify from 'dompurify';
 import { StyledTextArea } from '../../style/components/StyledTextarea'
 
 export const Form = (props) => {
@@ -38,8 +37,8 @@ export const Form = (props) => {
                 <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>
                 <p className='red'>
                     Due to Terms Changes in Heroku as hosting provider, 
-                    the whole backend functionality will be disabled start from 28-Nov-2022, 
-                    any and all interactions after login might be inaccessible.
+                    entire app functionality will be disabled start from 28-Nov-2022, 
+                    any and all interactions after login are inaccessible.
                 </p>
                 <p className='m-t-10'>
                     However, the source code are available in 

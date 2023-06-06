@@ -4,9 +4,7 @@ import { StyledContainer } from '../../style/components/StyledContainer';
 import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { StyledHeading } from '../../style/components/StyledHeading';
 import { yellow } from '../../style/ColorVariable';
-
 import { NavBarSiswa } from '../partials/NavBarSiswa';
-
 
 export const BadgesDetail = () => {
 

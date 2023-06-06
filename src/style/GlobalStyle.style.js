@@ -14,7 +14,7 @@ export const GlobalStyled = createGlobalStyle`
         font-size: 16px;
         color:#303030;
         background-color:#FFF;
-        line-height:1.5 ;
+        line-height:1.5;
         user-select:none;
     }
 

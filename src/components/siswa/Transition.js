@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { getProfilThunk } from '../../redux/user/thunk';
 import { useNavigate } from 'react-router-dom';
 
-
 export const Transition = () => {
 
     const dispatch = useDispatch()

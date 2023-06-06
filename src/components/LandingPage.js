@@ -4,10 +4,8 @@ import { StyledContainer } from '../style/components/StyledContainer'
 import { StyledWrapper } from '../style/components/StyledWrapper'
 import { NavBarLanding } from './partials/NavBar'
 import { StyledHeading } from '../style/components/StyledHeading'
-import { black, magenta, primary, white, yellow } from '../style/ColorVariable'
+import { black, magenta } from '../style/ColorVariable'
 import { StyledButton } from '../style/components/StyledButton'
-import bg from '../assets/gamification.png'
-
 
 export const LandingPage = () => {
     return (
@@ -16,34 +14,28 @@ export const LandingPage = () => {
 
             <NavBarLanding />
 
-            <StyledWrapper flex="flex" main>
+            <StyledWrapper flex="flex" main direction="column" justifyContent="center" alignItems="center">
 
-                <div className='flex-only flex-2 flex-column landing-desc'>
+                <StyledHeading backgroundcolor={black} landing>&#x1F3AE; Fun Way To Learn! &#x1F3C6;</StyledHeading>
 
-                    <StyledHeading backgroundcolor={magenta} landing>Fun Way To Learn!</StyledHeading>
-                    <p className='p-20-ub'>
-                        Fun Way To Learn is an LMS implemented with Gamification Concept built with React js, 
-                        It can be used by any student, teacher or group of people who would like to learn something. 
-                        This app saves time and effort by focusing on content and user interface. 
-                        There are several level with better rewards and higher scores as they progress.
-                        It can be used as a simple homework tracker, or as a complex smart grading scheme for higher education.
-                    </p>
-                    <StyledButton
-                        as={Link}
-                        to={'/login'}
-                        color='#303030'
-                        width="20%"
-                        textAlign="center"
-                        main
-                    >
-                        Get Started
-                    </StyledButton>
+                <p className='text-center main-paragraph'>
+                    Fun Way To Learn is an LMS implemented with Gamification Concept, 
+                    It can be used by any student, teacher or group of people in learning progress. 
+                    There are several level with better rewards and higher scores as they progress.
+                    It can be used as a simple homework tracker, or as a complex smart grading scheme for higher education.
+                </p>
 
-                </div>
-
-                <div className="landing-png flex-only flex-1 flex-center">
-                    <img src={bg} alt="" />
-                </div>
+                <StyledButton
+                    as={Link}
+                    to={'/login'}
+                    color='#FFF'
+                    width="20%"
+                    textAlign="center"
+                    main
+                    backgroundcolor={magenta}
+                >
+                    Get Started
+                </StyledButton>
 
             </StyledWrapper>
 

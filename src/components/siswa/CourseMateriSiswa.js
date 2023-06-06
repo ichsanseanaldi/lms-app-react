@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useRefresh } from '../../hooks/useRefresh'
 import { useDispatch, useSelector } from 'react-redux';
 import { verifyMateriThunk } from '../../redux/user/thunk';
-// import { NavBarSiswa } from '../partials/NavBarSiswa';
 import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { StyledContainer } from '../../style/components/StyledContainer';
 import { StyledHeading } from '../../style/components/StyledHeading';

@@ -7,6 +7,30 @@
     line-height: 2.5 !important;
 }
 
+.main-paragraph{
+    line-height: 1.7;
+    font-size: 1.1rem;
+    font-weight: 300;
+    padding: 10px;
+    width: 70%;
+}
+
+.fixed-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background:#202020;
+    color: #fff;
+}
+
+.nav-main{
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 10px;
+}
+
 .caveat{
     font-family: 'Kalam', sans-serif;
 }
@@ -174,7 +198,10 @@
 
 .link-nav,
 .link-nav-main{
-    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 20px;
 }
 
 .brand,.form-header{
@@ -438,6 +465,11 @@ a:hover .rotate-anim-hov{
 
 
 @media (max-width:1100px){
+
+    .nav-main{
+        max-width: 800px;
+    }
+
     .svg-ldr{
         width: 500px;
         height: 150px;
@@ -478,6 +510,10 @@ a:hover .rotate-anim-hov{
         padding: 10px 0;
     }
 
+    .nav-main{
+        width: 500px;
+    }
+
     .brand .link-nav{
         margin: 0;
         padding:0;
@@ -502,9 +538,6 @@ a:hover .rotate-anim-hov{
 
     .landing-desc{
         text-align: center;
-    }
-
-    .landing-desc{
         justify-content: center;
         align-items: center;
     }
@@ -527,6 +560,10 @@ a:hover .rotate-anim-hov{
 @media (max-width:700px){
 
     .form{
+        width: 100%;
+    }
+
+    .main-paragraph{
         width: 100%;
     }
 
@@ -618,6 +655,7 @@ a:hover .rotate-anim-hov{
     }
 
     .nav-main{
+        width: 300px;
         padding: 5px 0;
     }
 
