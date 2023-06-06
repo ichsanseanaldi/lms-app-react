@@ -645,6 +645,10 @@ a:hover .rotate-anim-hov{
 
 @media (max-width:530px){
 
+    .main-paragraph{
+        font-size: 1rem;
+    }
+
     .landing-desc{
         font-size: 0.9rem;
     }

@@ -13,4 +13,11 @@ export const StyledHeading = styled.h1`
         font-size: ${props => props.landing && '46px'};
     }
 
+    @media (max-width:500px){
+        ${props => props.landing && `
+            font-size:28px;
+            text-align:center;
+        `};
+    }
+
 `
