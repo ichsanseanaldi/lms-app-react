@@ -15,6 +15,7 @@ export const InputGroup = ({ type, name, id, value, onChange, login }) => {
                 border={true}
                 pattern=".{5,20}"
                 required
+                disabled
             />
         </div>
     )
