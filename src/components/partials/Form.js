@@ -19,19 +19,19 @@ export const Form = (props) => {
                     </div>
                 }
                 <div className='m-t-10'>
-                    <InputGroup type={props.typeOne} name={props.nameOne} placeholder={props.nameOne} value={props.valueOne} onChange={props.onChangeOne} login={props.login} />
+                    <InputGroup type={props.typeOne} name={props.nameOne} placeholder={props.nameOne} value={props.valueOne} onChange={props.onChangeOne} login={props.login} disabled/>
                 </div>
                 <div className='m-t-10'>
                     {props.typeTwo === 'textarea' ?
 
                         <>
                             <label htmlFor={props.nameTwo}>{props.nameTwo}</label>
-                            <StyledTextArea name={props.nameTwo} id={props.nameTwo} cols="30" rows="10" placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} required />
+                            <StyledTextArea name={props.nameTwo} id={props.nameTwo} cols="30" rows="10" placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} required disabled />
                         </>
 
                         :
 
-                        props.typeTwo && <InputGroup type={props.typeTwo} name={props.nameTwo} placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} login={props.login} />
+                        props.typeTwo && <InputGroup type={props.typeTwo} name={props.nameTwo} placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} login={props.login} disabled/>
                     }
                 </div>
                 <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>
