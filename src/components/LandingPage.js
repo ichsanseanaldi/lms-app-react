@@ -16,13 +16,19 @@ export const LandingPage = () => {
 
             <StyledWrapper flex="flex" main direction="column" justifyContent="center" alignItems="center">
 
-                <StyledHeading backgroundcolor={black} landing>&#x1F3AE; Fun Way To Learn! &#x1F3C6;</StyledHeading>
+                <StyledHeading 
+                    backgroundcolor={black} 
+                    landing
+                > 
+                    <span className='main-emoji'>&#x1F3AE; </span>  
+                    Fun Way <br className='space'/> To Learn! 
+                    <span className='main-emoji'> &#x1F3C6;</span> 
+
+                </StyledHeading>
 
                 <p className='text-center main-paragraph'>
                     Fun Way To Learn is an LMS implemented with Gamification Concept, 
                     It can be used by any student, teacher or group of people in learning progress. 
-                    There are several level with better rewards and higher scores as they progress.
-                    It can be used as a simple homework tracker, or as a complex smart grading scheme for higher education.
                 </p>
 
                 <StyledButton

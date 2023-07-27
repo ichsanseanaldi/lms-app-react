@@ -22,11 +22,11 @@ export const Login = () => {
     const navigate = useNavigate();
 
     const handleUsername = (e) => {
-        setUsername(e.target.value)
+        // setUsername(e.target.value)
     }
 
     const handlePassword = (e) => {
-        setPassword(e.target.value)
+        // setPassword(e.target.value)
     }
 
     const authLogin = async (e) => {

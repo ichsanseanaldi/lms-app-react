@@ -1,18 +1,21 @@
 #materi-wrapper{
     font-size: 0.9em !important;
-    font-family: 'Roboto',sans-serif !important;
+    font-family: 'Open Sans',sans-serif !important;
 }
 
 #materi-wrapper > *{
     line-height: 2.5 !important;
 }
 
+.space{
+    display: none;
+}
+
 .main-paragraph{
-    line-height: 1.7;
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
     padding: 10px;
     width: 70%;
+    line-height: 1.6;
 }
 
 .fixed-nav{
@@ -202,6 +205,10 @@
     align-items: center;
     padding: 10px 0;
     margin-left: 20px;
+}
+
+.link-nav-main.active > a{
+    font-weight: 600;
 }
 
 .brand,.form-header{
@@ -502,16 +509,17 @@ a:hover .rotate-anim-hov{
 
 }
 
-@media (max-width:800px){
+
+@media (max-width:850px){
+
+    .main-emoji{
+        display: none;
+    }
 
     .brand,
     strong{
         font-size: 1.2em;
         padding: 10px 0;
-    }
-
-    .nav-main{
-        width: 500px;
     }
 
     .brand .link-nav{
@@ -645,12 +653,8 @@ a:hover .rotate-anim-hov{
 
 @media (max-width:530px){
 
-    .main-paragraph{
-        font-size: 1rem;
-    }
-
-    .landing-desc{
-        font-size: 0.9rem;
+    .space{
+        display: block;
     }
 
     .row-admin > *{
@@ -659,8 +663,8 @@ a:hover .rotate-anim-hov{
     }
 
     .nav-main{
-        width: 300px;
-        padding: 5px 0;
+        width: 100%;
+        padding: 5px 15px;
     }
 
     .nav-link-group{

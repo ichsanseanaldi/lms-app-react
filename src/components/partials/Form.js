@@ -34,11 +34,10 @@ export const Form = (props) => {
                         props.typeTwo && <InputGroup type={props.typeTwo} name={props.nameTwo} placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} login={props.login} disabled/>
                     }
                 </div>
-                <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton>
-                <p className='red'>
-                    Due to Terms Changes in Heroku as hosting provider, 
-                    entire app functionality will be disabled start from 28-Nov-2022, 
-                    any and all interactions after login are inaccessible.
+                {/* <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton> */}
+                <p className='red m-t-10'>
+                    Due to term changes, entire app functionality will be disabled, 
+                    any interactions after login are no longer accesible.
                 </p>
                 <p className='m-t-10'>
                     However, the source code are available in 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
 
-    padding: 20px;
+    padding: 15px;
     margin: 10px 0;
     border-radius:5px;
     font-weight:500;
@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
     text-align:${props => props.textAlign};
 
     @media (max-width:800px){
-        width:${props => props.main && '100%'};
+        width:${props => props.main && 'fit-content'};
     }
 
 `

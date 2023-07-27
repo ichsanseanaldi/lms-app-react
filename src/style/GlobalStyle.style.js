@@ -10,18 +10,18 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 16px;
         color:#303030;
         background-color:#FFF;
-        line-height:1.5;
         user-select:none;
+        line-height:1.5;
     }
 
    a,ul,ol,span,p,label,button,::placeholder{
-        font-family:'Poppins', Arial, sans-serif ;
+        font-family:'Open Sans', sans-serif ;
         transition:0.3s ;
-        font-weight:300 ;
+        font-weight:400 ;
     }
 
     ul,ol{
