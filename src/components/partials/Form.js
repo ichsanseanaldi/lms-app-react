@@ -36,7 +36,7 @@ export const Form = (props) => {
                 </div>
                 {/* <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton> */}
                 <p className='red m-t-10'>
-                    Due to term changes, entire app functionality will be disabled, 
+                    Due to certain changes, the entire app functionality are disabled, 
                     any interactions after login are no longer accesible.
                 </p>
                 <p className='m-t-10'>
