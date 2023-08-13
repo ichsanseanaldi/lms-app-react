@@ -33,32 +33,34 @@ export const Login = () => {
 
         e.preventDefault();
 
-        try {
+        navigate(`/dashboard-siswa`)
 
-            setLoad(true)
-            const res = await axiosInstance.post('auth/login', {
-                username: username,
-                password: password
-            })
+        // try {
 
-            const decode = jwtDecode(res.data.accessToken);
+        //     setLoad(true)
+        //     const res = await axiosInstance.post('auth/login', {
+        //         username: username,
+        //         password: password
+        //     })
 
-            localStorage.setItem('role', decode.role);
+        //     const decode = jwtDecode(res.data.accessToken);
 
-            setLoad(false)
-            if (decode.isNew === 'no') {
-                navigate(`/dashboard-${decode.role}`);
-            }
-            else {
-                navigate(`/add-profil`);
-            }
+        //     localStorage.setItem('role', decode.role);
+
+        //     setLoad(false)
+        //     if (decode.isNew === 'no') {
+        //         navigate(`/dashboard-${decode.role}`);
+        //     }
+        //     else {
+        //         navigate(`/add-profil`);
+        //     }
 
 
-        } catch (error) {
-            setLoad(false)
-            if (error.response.data) setError(error.response.data.msg);
+        // } catch (error) {
+        //     setLoad(false)
+        //     if (error.response.data) setError(error.response.data.msg);
 
-        }
+        // }
 
     }
 
@@ -68,7 +70,7 @@ export const Login = () => {
 
             <NavBarLanding />
 
-            <StyledWrapper flex="flex" direction="column" justifyContent="center" alignItems="center">
+            <StyledWrapper flex="flex" direction="column" justifyContent="center" alignItems="center" transparent>
 
                 <Form
                     login

@@ -10,9 +10,7 @@ export const Card = (props) => {
             <div className='flex flex-column flex-center-start b-r p-20-lr'>
                 <p className='card-header'> {props.judul}</p>
                 <StyledHeading>
-                    <i>
-                        {props.value} {props.clickable && props.value > 0 ? '>' : ''}
-                    </i>
+                    {props.value} {props.clickable && props.value > 0 ? '>' : ''}
                 </StyledHeading>
             </div>
         </StyledCard>

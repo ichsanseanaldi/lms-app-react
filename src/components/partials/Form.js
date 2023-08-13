@@ -34,13 +34,15 @@ export const Form = (props) => {
                         props.typeTwo && <InputGroup type={props.typeTwo} name={props.nameTwo} placeholder={props.nameTwo} value={props.valueTwo} onChange={props.onChangeTwo} login={props.login} disabled/>
                     }
                 </div>
-                {/* <StyledButton width="100%" color={white} backgroundcolor={primary}>Submit</StyledButton> */}
-                <p className='red m-t-10'>
-                    Due to certain changes, the entire app functionality are disabled, 
-                    any interactions after login are no longer accesible.
+                <StyledButton width="100%" color={white} backgroundcolor={primary}>
+                    Try DEMO - without functionality
+                </StyledButton>
+                <p className='m-t-10'>
+                    Due to certain changes, server app functionality are disabled, 
+                    However you can still access it. Click the button above! 
                 </p>
                 <p className='m-t-10'>
-                    However, the source code are available in 
+                    The source code are available in 
                     <a style={{display:'inline',color:'blue',textDecoration:'underline',padding:'0 5px'}} href="https://github.com/ichsanseanaldi" target="_blank">
                         My Github
                     </a>

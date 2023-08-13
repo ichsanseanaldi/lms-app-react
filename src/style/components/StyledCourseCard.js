@@ -8,7 +8,7 @@ export const StyledCourseCard = styled.div`
     margin: 10px;
     display: flex;
     flex-direction: column ;
-    /* border-radius:10px; */
+    border-radius:10px;
     background-color: ${props => props.backgroundcolor} ;
     box-shadow:5px 5px 10px rgba(0,0,0,0.2) ;
 `

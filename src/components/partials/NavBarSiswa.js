@@ -6,6 +6,8 @@ import { StyledButton } from '../../style/components/StyledButton'
 
 export const NavBarSiswa = () => {
 
+    const path = window.location.pathname;
+
     const [toggle, setToggle] = useState(false);
     const [show, setShow] = useState(false);
 
@@ -20,22 +22,22 @@ export const NavBarSiswa = () => {
     }
 
     return (
-        <div className={`p-20-lr nav-resize ${show ? 'appear' : 'hidden'}`}>
+        <div className={`nav-siswa p-20-lr nav-resize ${show ? 'appear' : 'hidden'}`}>
             <div className='btn-toggle'>
                 <button onClick={togglerNav}>
                     <div></div>
                     <div></div>
                 </button>
             </div>
-            <div className='m-t-30'>
-                <div className='link-nav m-t-20'>
+            <div className='m-t-30 nav-inner'>
+                <div className={`link-nav m-ub-20 ${path === '/dashboard-siswa' ? 'active' : ''}`}>
                     <Link to={'/dashboard-siswa'}>
                         <svg width="50" height="50" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M113.161 54.1113L64.1065 5.08205L60.8184 1.79396C60.0692 1.04972 59.0561 0.632019 58 0.632019C56.944 0.632019 55.9309 1.04972 55.1817 1.79396L2.83891 54.1113C2.07123 54.876 1.46453 55.7867 1.05461 56.7897C0.644682 57.7928 0.439846 58.8677 0.452186 59.9512C0.502968 64.4199 4.22269 67.9873 8.69144 67.9873H14.087V109.336H101.913V67.9873H107.423C109.594 67.9873 111.638 67.1367 113.174 65.6006C113.93 64.8466 114.53 63.9501 114.937 62.963C115.345 61.9758 115.552 60.9176 115.548 59.8496C115.548 57.6914 114.697 55.6475 113.161 54.1113ZM65.1094 100.195H50.8907V74.2969H65.1094V100.195ZM92.7725 58.8467V100.195H73.2344V71.25C73.2344 68.4444 70.962 66.1719 68.1563 66.1719H47.8438C45.0381 66.1719 42.7657 68.4444 42.7657 71.25V100.195H23.2276V58.8467H11.0401L58.0127 11.9121L60.9454 14.8447L104.973 58.8467H92.7725Z" fill="black" />
                         </svg>
                     </Link>
                 </div>
-                <div className='link-nav m-t-20'>
+                <div className={`link-nav m-ub-20 ${path === '/course-list-siswa' ? 'active' : ''}`}>
                     <Link to={'/course-list-siswa'}>
                         <svg width="50" height="50" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M59.9246 7.27999C61.4425 6.39171 63.2027 5.92007 65 5.92007C66.7972 5.92007 68.5575 6.39171 70.0754 7.27999L115.483 33.86C116.832 34.6495 117.944 35.7409 118.713 37.0329C119.483 38.3249 119.887 39.7755 119.887 41.25C119.887 42.7245 119.483 44.1751 118.713 45.4671C117.944 46.759 116.832 47.8505 115.483 48.64L70.0754 75.22C68.5575 76.1083 66.7972 76.5799 65 76.5799C63.2027 76.5799 61.4425 76.1083 59.9246 75.22L14.5167 48.64C13.1675 47.8505 12.0565 46.759 11.2866 45.4671C10.5167 44.1751 10.113 42.7245 10.113 41.25C10.113 39.7755 10.5167 38.3249 11.2866 37.0329C12.0565 35.7409 13.1675 34.6495 14.5167 33.86L59.9246 7.27999ZM65.7258 13.615C65.5088 13.4878 65.257 13.4203 65 13.4203C64.7429 13.4203 64.4912 13.4878 64.2742 13.615L18.8662 40.195C18.6738 40.3078 18.5154 40.4637 18.4057 40.6481C18.2959 40.8326 18.2384 41.0396 18.2384 41.25C18.2384 41.4604 18.2959 41.6674 18.4057 41.8519C18.5154 42.0363 18.6738 42.1921 18.8662 42.305L64.2742 68.885C64.4912 69.0122 64.7429 69.0797 65 69.0797C65.257 69.0797 65.5088 69.0122 65.7258 68.885L111.134 42.305C111.326 42.1921 111.485 42.0363 111.594 41.8519C111.704 41.6674 111.762 41.4604 111.762 41.25C111.762 41.0396 111.704 40.8326 111.594 40.6481C111.485 40.4637 111.326 40.3078 111.134 40.195L65.7258 13.615Z" fill="black" />
@@ -44,7 +46,7 @@ export const NavBarSiswa = () => {
                         </svg>
                     </Link>
                 </div>
-                <div className='link-nav m-t-20'>
+                <div className={`link-nav m-ub-20 ${path === '/leaderboard' ? 'active' : ''}`}>
                     <Link to={'/leaderboard'}>
                         <svg width="50" height="50" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19.7167 26.7583V41.7444H24.0139V21.8472H20.5833L14.625 25.8556L16.3222 28.8889L19.7167 26.7583Z" fill="black" />
@@ -56,7 +58,7 @@ export const NavBarSiswa = () => {
                         </svg>
                     </Link>
                 </div>
-                <div className='link-nav m-t-20'>
+                <div className='link-nav m-ub-20'>
                     <button onClick={toggler}>
                         <svg width="50" height="50" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M60.9375 8.125V65H69.0625V8.125H60.9375Z" fill="black" />

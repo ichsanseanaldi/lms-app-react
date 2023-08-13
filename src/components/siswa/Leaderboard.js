@@ -9,33 +9,102 @@ import { TableRow } from '../partials/TableRow';
 import { NavBarSiswa } from '../partials/NavBarSiswa';
 import { StyledHeading } from '../../style/components/StyledHeading';
 import { orange } from '../../style/ColorVariable';
+import { avatars } from '../../assets/AvatarSvg';
 
 export const Leaderboard = () => {
 
-    const role = localStorage.getItem('role');
+    // const role = localStorage.getItem('role');
 
-    const [token, tokenExp] = useRefresh(role);
+    // const [token, tokenExp] = useRefresh(role);
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const [load, setLoad] = useState(true);
+    // const [load, setLoad] = useState(true);
 
-    useEffect(() => {
-        dispatch(getAllSiswaThunk(token, tokenExp))
-        setLoad(false)
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getAllSiswaThunk(token, tokenExp))
+    //     setLoad(false)
+    // }, [dispatch])
 
-    const siswa = useSelector(state => state.user.siswalist);
-    const profil = useSelector(state => state.user.profil);
+    // const siswa = useSelector(state => state.user.siswalist);
+    // const profil = useSelector(state => state.user.profil);
     const mainColor = ['#E52B17', '#EA5706', '#FF9961']
     const accentColor = ['#FFFFFF', '#FFFFFF', '#FFFFFF']
     const ordinal = ['st', 'nd', 'rd', 'th', 'th']
+
+    const profil = {
+        nama_siswa:'User_Demo'
+    }
+
+    const siswa = [
+        {
+            nama_siswa:'User_Demo',
+            point_siswa:100,
+            level_siswa:1,
+            avatarSvg:avatars[0].svg
+        },
+        {
+            nama_siswa:'John',
+            point_siswa:400,
+            level_siswa:5,
+            avatarSvg:avatars[5].svg
+        },
+        {
+            nama_siswa:'Kylian',
+            point_siswa:450,
+            level_siswa:6,
+            avatarSvg:avatars[2].svg
+        },
+        {
+            nama_siswa:'Strauss',
+            point_siswa:200,
+            level_siswa:6,
+            avatarSvg:avatars[1].svg
+        },
+        {
+            nama_siswa:'Gauss',
+            point_siswa:600,
+            level_siswa:7,
+            avatarSvg:avatars[7].svg
+        },
+        {
+            nama_siswa:'Peter',
+            point_siswa:100,
+            level_siswa:1,
+            avatarSvg:avatars[10].svg
+        },
+        {
+            nama_siswa:'Stewie',
+            point_siswa:250,
+            level_siswa:2,
+            avatarSvg:avatars[8].svg
+        },
+        {
+            nama_siswa:'Brian',
+            point_siswa:300,
+            level_siswa:5,
+            avatarSvg:avatars[11].svg
+        },
+        {
+            nama_siswa:'Quagmire',
+            point_siswa:400,
+            level_siswa:4,
+            avatarSvg:avatars[15].svg
+        },
+        {
+            nama_siswa:'Joe',
+            point_siswa:150,
+            level_siswa:2,
+            avatarSvg:avatars[9].svg
+        },
+    ]
 
     siswa.sort((a, b) => b.point_siswa - a.point_siswa)
 
     return (
         <StyledContainer flex="flex">
-            {role === 'guru' ? <NavBarGuru /> : <NavBarSiswa />}
+            {/* {role === 'guru' ? <NavBarGuru /> : <NavBarSiswa />} */}
+            <NavBarSiswa/>
             <StyledWrapper>
                 <div className='w-100'>
 
@@ -50,16 +119,16 @@ export const Leaderboard = () => {
                                 width="100%"
                             />
 
-                            {load && siswa.length < 0 ?
+                            {/* {load && siswa.length < 0 ?
 
                                 <div className='m-t-20 p-20-all flex flex-column flex-center'>
                                     <div className='borders p-20-all'></div>
                                     <h1 className='m-t-20'>Loading...</h1>
                                 </div>
 
-                                :
+                                : */}
 
-                                siswa.map((e, i) => {
+                                {siswa.map((e, i) => {
                                     return (
                                         <TableRow
                                             currentName={profil.nama_siswa ? profil.nama_siswa : ''}
@@ -74,8 +143,9 @@ export const Leaderboard = () => {
                                             point={e.point_siswa}
                                         />
                                     )
-                                })
-                            }
+                                })}
+                                
+                            {/* } */}
                         </div>
                     </div>
                 </div>

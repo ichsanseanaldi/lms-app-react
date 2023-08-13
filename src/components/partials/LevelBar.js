@@ -13,7 +13,7 @@ export const LevelBar = (props) => {
         return (
             <div>
                 <StyledBar data={percentage.toString()} >
-                    {pointSiswa}/{nextLevelPoint} ({percentage}%)
+                    <p>{pointSiswa} / {nextLevelPoint} ({percentage}%)</p>
                 </StyledBar>
             </div>
 

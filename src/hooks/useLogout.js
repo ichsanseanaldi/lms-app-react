@@ -6,11 +6,11 @@ export const useLogout = () => {
 
     const navigate = useNavigate();
 
-    const logout = async () => {
+    const logout = () => {
 
         try {
 
-            await axiosInstance.delete('auth/logout');
+            // await axiosInstance.delete('auth/logout');
 
             navigate('/');
 

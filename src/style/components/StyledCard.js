@@ -38,18 +38,19 @@ export const StyledCard = styled.div`
     margin: 10px ;
     padding: 10px 0 ;
     display: flex ;
-    /* border-radius:10px ; */
+    border-radius:10px;
 	color: #FFF ;
-	background-color:${props => props.bordercolor} ;
-    /* border : 2px solid ${props => props.bordercolor}; */
+	background-color:${props => props.bordercolor};
 	box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+	
 
 	.svg-card{
 		transform:scale(0.7);
+		transition:0.2s;
 	}
 
     &:hover .svg-card{
-        animation: ${myAnim} 2s cubic-bezier(0, 0.7, 0.4, 1) 0s 1 normal forwards;
+       transform:scale(0.75);
     }
 
 	@media (max-width:920px){

@@ -25,7 +25,7 @@ export const CourseListSiswa = () => {
                     Course List
                 </StyledHeading>
                 <div className='flex flex-wrap m-t-20 course-wrapper'>
-                    {course[0] === '' ?
+                    {course.length < 1 ?
 
                         <div className='m-t-20'>
                             <h1>Tidak ada course..</h1>

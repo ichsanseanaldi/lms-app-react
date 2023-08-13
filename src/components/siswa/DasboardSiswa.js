@@ -10,23 +10,37 @@ import { green, magenta, pink, primary, purple, yellow } from '../../style/Color
 import { NavBarSiswa } from '../partials/NavBarSiswa';
 import { LevelBar } from '../partials/LevelBar';
 import { Link } from 'react-router-dom';
+import { avatars } from '../../assets/AvatarSvg';
 
 export const DashboardSiswa = () => {
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const [token, tokenExp] = useRefresh('siswa');
-    const profil = useSelector(state => state.user.profil);
-    const course = useSelector(state => state.user.course);
-    const badges = useSelector(state => state.user.badges);
+    // const [token, tokenExp] = useRefresh('siswa');
+    // const profil = useSelector(state => state.user.profil);
+    // const course = useSelector(state => state.user.course);
+    // const badges = useSelector(state => state.user.badges);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        dispatch(getProfilThunk(token, tokenExp, 'siswa'));
-        dispatch(getCourseThunk(token, tokenExp));
-        dispatch(getBadgesThunk(token, tokenExp));
+    //     dispatch(getProfilThunk(token, tokenExp, 'siswa'));
+    //     dispatch(getCourseThunk(token, tokenExp));
+    //     dispatch(getBadgesThunk(token, tokenExp));
 
-    }, [dispatch])
+    // }, [dispatch])
+
+    const profil = {
+        nama_siswa:'User_Demo',
+        avatarSvg:avatars[0].svg,
+        level_siswa:1,
+        point_siswa:100,
+        materi_finished:0,
+        exercise_finished:0
+    }
+
+    const badges = [];
+
+    const course = [];
 
     return (
 
@@ -54,13 +68,13 @@ export const DashboardSiswa = () => {
                                         <h3 className='m-t-10'>{profil.nama_siswa}</h3>
                                     </div>
                                     <div className='m-t-10 flex flex-column bar-wrap p-10-all'>
-                                        <div className='flex-only flex-center-between-rev p-10-ub level-wrap caveat '>
-                                            <h2>
+                                        <div className='flex-only flex-center-between-rev p-10-ub level-wrap'>
+                                            <p>
                                                 Level {profil.level_siswa}
-                                            </h2>
-                                            <h2>
+                                            </p>
+                                            <p>
                                                 Level {isNaN(profil.level_siswa + 1) ? '' : profil.level_siswa + 1}
-                                            </h2>
+                                            </p>
                                         </div>
                                         <div >
                                             <div className='bordered border-round'>

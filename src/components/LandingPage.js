@@ -14,7 +14,7 @@ export const LandingPage = () => {
 
             <NavBarLanding />
 
-            <StyledWrapper flex="flex" main direction="column" justifyContent="center" alignItems="center">
+            <StyledWrapper flex="flex" main direction="column" justifyContent="center" alignItems="center" transparent>
 
                 <StyledHeading 
                     backgroundcolor={black} 

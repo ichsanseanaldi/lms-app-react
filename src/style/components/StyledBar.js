@@ -30,11 +30,9 @@ export const StyledBar = styled.div`
 
     text-align:center;
     position:relative;
-    padding: 5px 10px ;
+    padding: 5px 10px;
     z-index:2;
-    color:#505050 ;
-    font-weight:700 ;
-    font-family:'Raleway', sans-serif ;
+    color:#505050;
     
     &::after{
         content:'';
@@ -42,9 +40,9 @@ export const StyledBar = styled.div`
         top:0 ;
         bottom:0 ;
         left:0 ;
+        border-radius:5px;
         width:${props => props.data}% ;
-        z-index:-2 ;
-        /* border-radius:5px ; */
+        z-index:-2;
         background: #1DCDFF;
         animation: ${props => progress(props.data)} 3s cubic-bezier(0, 0.7, 0.4, 1) forwards;
     }
@@ -57,10 +55,10 @@ export const StyledBar = styled.div`
         left:0 ;
         width:50px ;
         z-index:-1 ;
-        border-radius:5px ;
+        border-radius:5px;
         animation: ${props => wave(props.data)} 1s infinite forwards ;
         background-color:#fff;
-        opacity:0.1 ;
+        opacity:0.25;
     }
 
 `

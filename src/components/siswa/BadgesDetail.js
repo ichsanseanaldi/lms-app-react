@@ -20,7 +20,7 @@ export const BadgesDetail = () => {
                 </StyledHeading>
                 <div className='p-20-lr m-t-10 '>
                     <div className='flex flex-center flex-wrap'>
-                        {badges.length > 0 && badges.map(e => {
+                        {/* {badges.length > 0 && badges.map(e => {
                             return (
                                 <div className='p-20-all m-lr-20'>
                                     <div className='flex flex-center' dangerouslySetInnerHTML={{ __html: e.badge.badge_svg }} />
@@ -30,8 +30,10 @@ export const BadgesDetail = () => {
                                     </div>
                                 </div>
                             )
-                        })}
+                        })} */}
+                        
                     </div>
+                    <h1>Badges empty</h1>
                 </div>
             </StyledWrapper>
         </StyledContainer>

@@ -1,52 +1,52 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { useRefresh } from '../../hooks/useRefresh';
-import { getCourseByCodeThunk, joinCourseThunk } from '../../redux/user/thunk';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
+// import { useRefresh } from '../../hooks/useRefresh';
+// import { getCourseByCodeThunk, joinCourseThunk } from '../../redux/user/thunk';
 import { StyledContainer } from '../../style/components/StyledContainer';
 import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { StyledHeading } from '../../style/components/StyledHeading';
-import { grey, lightblue } from '../../style/ColorVariable';
+import { grey, lightblue , yellow } from '../../style/ColorVariable';
 import { NavBarSiswa } from '../partials/NavBarSiswa';
 import { StyledInput } from '../../style/components/StyledInput';
-import { CourseCard } from '../partials/CourseCard';
-import { Modal } from '../partials/Modal';
+// import { CourseCard } from '../partials/CourseCard';
+// import { Modal } from '../partials/Modal';
 
 export const CariCourse = () => {
 
-    const [code, setCode] = useState('')
-    const [token, tokenExp] = useRefresh('siswa');
-    const [toggle, setToggle] = useState(false);
+    // const [code, setCode] = useState('')
+    // const [token, tokenExp] = useRefresh('siswa');
+    // const [toggle, setToggle] = useState(false);
 
-    const course = useSelector(state => state.user.course);
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+    // const course = useSelector(state => state.user.course);
+    // const navigate = useNavigate();
+    // const dispatch = useDispatch();
 
-    const { coursedetail, joint, materi, exercise } = course;
+    // const { coursedetail, joint, materi, exercise } = course;
 
     const body = {
-        idcourse: coursedetail && coursedetail.id_course
+        // idcourse: coursedetail && coursedetail.id_course
     }
 
     const post = () => {
-        dispatch(joinCourseThunk(body, token, tokenExp));
-        navigate('/dashboard-siswa', { replace: true });
+        // dispatch(joinCourseThunk(body, token, tokenExp));
+        // navigate('/dashboard-siswa', { replace: true });
     }
 
     const get = (e) => {
-        e.preventDefault();
-        dispatch(getCourseByCodeThunk(token, tokenExp, code));
+        // e.preventDefault();
+        // dispatch(getCourseByCodeThunk(token, tokenExp, code));
     }
 
     const toggler = () => {
-        setToggle(!toggle);
+        // setToggle(!toggle);
     }
 
     return (
         <StyledContainer flex="flex">
             <NavBarSiswa />
             <StyledWrapper>
-                <StyledHeading backgroundcolor={lightblue}>
+                <StyledHeading backgroundcolor={yellow}>
                     Cari Course
                 </StyledHeading>
                 <div className='m-t-20'>
@@ -59,18 +59,18 @@ export const CariCourse = () => {
                                 <StyledInput
                                     type="text"
                                     id='code'
-                                    value={code}
+                                    // value={code}
                                     name='code'
-                                    onChange={e => setCode(e.target.value)}
+                                    // onChange={e => setCode(e.target.value)}
                                     placeholder="Code Course"
                                     border={true}
                                 />
-                                <button className='src-btn'>Cari</button>
+                                <button className='src-btn' disabled>Cari</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <div className='flex flex-wrap '>
                         {course[0] !== '' && coursedetail ?
 
@@ -97,8 +97,8 @@ export const CariCourse = () => {
                             </div>
                         }
                     </div>
-                </div>
-                {
+                </div> */}
+                {/* {
                     toggle &&
 
                     <Modal
@@ -107,7 +107,7 @@ export const CariCourse = () => {
                         onClick={post}
                     />
 
-                }
+                } */}
             </StyledWrapper>
         </StyledContainer >
 

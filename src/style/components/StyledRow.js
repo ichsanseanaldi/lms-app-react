@@ -3,27 +3,21 @@ import styled from 'styled-components';
 
 export const StyledRow = styled.div`
 
-    font-family: 'Kalam', sans-serif !important;
-    font-size:${props => props.iterate === 1 ? '1.1rem' : '1rem'};
+    font-size:${props => props.title && '18px'};
     background-color:${props => props.title ? '#303030' : props.backgroundcolor} ;
     color:${props => props.title ? 'white' : props.color} ;
     width:100% ;
-    padding: 5px 20px;
-    margin: 0 auto ;
-    user-select:none;
-    transition: 0.8s cubic-bezier(0, 0.7, 0.4, 1);
+    padding: 10px 20px;
+    margin: 0 auto;
+    transition: 0.2s;
+    text-align:center;
 
     &:hover{
-        transform:${props => props.title ? 'scale(1)' : 'scale(1.05)'} ;
+        transform:${props => props.title ? 'scale(1)' : 'scale(1.02)'} ;
     }
 
     @media (max-width:700px){
-        font-size:${props => props.ordinal === 'st' ? '1rem' : '0.9rem'};
+        font-size:${props => props.ordinal === 'st' ? '16px' : '15px'};
     }
-
-    @media (max-width:530px){
-        font-size:0.6rem;
-    }
-
 
 `

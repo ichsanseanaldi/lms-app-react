@@ -6,7 +6,7 @@ export const StyledHeading = styled.h1`
     position:relative ;
     z-index: 1;
     font-weight:800;
-    letter-spacing:-4px;
+    letter-spacing:-2px;
     color:${props => props.backgroundcolor};
 
     @media (max-width:800px){
