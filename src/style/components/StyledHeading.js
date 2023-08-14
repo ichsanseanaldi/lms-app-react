@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { magenta, pink, yellow } from '../ColorVariable';
 
 export const StyledHeading = styled.h1`
 
@@ -8,6 +9,7 @@ export const StyledHeading = styled.h1`
     font-weight:800;
     letter-spacing:-2px;
     color:${props => props.backgroundcolor};
+    text-shadow:${props=>props.landing? '3px 3px white, 6px 6px #F24C4C' :'4px 4px #202020'};
 
     @media (max-width:800px){
         font-size: ${props => props.landing && '50px'};

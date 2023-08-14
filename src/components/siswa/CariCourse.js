@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import { StyledContainer } from '../../style/components/StyledContainer';
 import { StyledWrapper } from '../../style/components/StyledWrapper';
 import { StyledHeading } from '../../style/components/StyledHeading';
-import { grey, lightblue , yellow } from '../../style/ColorVariable';
+import { yellow } from '../../style/ColorVariable';
 import { NavBarSiswa } from '../partials/NavBarSiswa';
 import { StyledInput } from '../../style/components/StyledInput';
 // import { CourseCard } from '../partials/CourseCard';
