@@ -27,7 +27,7 @@ export const LandingPage = () => {
                 </StyledHeading>
 
                 <p className='text-center main-paragraph'>
-                    Fun Way To Learn is an LMS implemented with Gamification Concept, 
+                    Fun Way To Learn is a Learning Management System implemented with Gamification Concept, 
                     It can be used by any student, teacher or group of people in learning progress. 
                 </p>
 
