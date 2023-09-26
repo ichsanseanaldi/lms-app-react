@@ -39,7 +39,7 @@ export const CourseListSiswa = () => {
                   backgroundcolor={magenta}
                   color={white}
                 >
-                  Join Course +{" "}
+                  Ambil Course +{" "}
                 </StyledButton>
               </div>
             </div>

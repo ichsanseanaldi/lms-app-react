@@ -16,6 +16,6 @@ export const StyledHeading = styled.h1`
     !props.landing && !props.card ? `border-bottom: 2px solid #EEE;` : ""}
 
   @media (max-width: 985px) {
-    font-size: ${(props) => props.landing && "60px"};
+    font-size: ${(props) => props.landing && "50px"};
   }
 `

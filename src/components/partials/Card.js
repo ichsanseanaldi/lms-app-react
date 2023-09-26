@@ -11,7 +11,7 @@ export const Card = (props) => {
         dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.svg)}}
       />
       <div className='flex flex-column flex-center-start b-r p-20-lr'>
-        <p className='card-header'> {props.judul}</p>
+        <h2 className='card-header'> {props.judul}</h2>
         <StyledHeading card>
           {props.value} {props.clickable && props.value > 0 ? ">" : ""}
         </StyledHeading>

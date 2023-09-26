@@ -37,11 +37,12 @@
 .nav-main {
   max-width: 1300px;
   margin: auto;
-  padding: 0 10px;
+  padding: 10px;
 }
 
-.nav-main h4 {
-  font-family: "Rubik", sans-serif;
+p.rubik {
+  font-size: 1.4rem;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .badges-mini {
