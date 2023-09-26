@@ -1,5 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
-
+import {createGlobalStyle} from "styled-components"
 
 export const GlobalStyled = createGlobalStyle`
 
@@ -14,18 +13,19 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Rubik', sans-serif;
         font-size: 16px;
-        color:#303030;
+        color:black;
         background-color:#EEE;
         line-height:1.5;
     }
 
-   a,ul,ol,span,p,label,button,::placeholder{
+   a,ul,ol,span,p,label,button,::placeholder, h2,h3,h4{
         font-family: 'Nunito', sans-serif !important;
         transition:0.3s ;
-        font-weight:400 ;
     }
+
+    
 
     ul,ol{
         margin-left:2rem ;
@@ -46,11 +46,6 @@ export const GlobalStyled = createGlobalStyle`
         border:none;
         background-color:transparent;
         cursor:pointer;
-
-        &:hover{
-            opacity:0.7;
-        }
-
     }
 
     label,::placeholder{

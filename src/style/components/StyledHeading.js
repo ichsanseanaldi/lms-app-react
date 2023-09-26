@@ -1,24 +1,21 @@
-import styled from 'styled-components';
-import { magenta, pink, yellow } from '../ColorVariable';
+import styled from "styled-components"
 
 export const StyledHeading = styled.h1`
+  z-index: 1;
+  font-size: ${(props) => (props.landing ? "80px" : "3em")};
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  text-shadow: 3px 3px black, 7px 7px black;
+  text-align: ${(props) => (props.landing ? "center" : "start")};
+  color: ${(props) => props.backgroundcolor};
+  -webkit-text-stroke: 3px black;
 
-    font-size: ${props => props.landing ? '64px' : '3em'} ;
-    position:relative ;
-    z-index: 1;
-    font-weight:800;
-    letter-spacing:-2px;
-    color:${props => props.backgroundcolor};
-    text-shadow:${props=>props.landing? '3px 3px white, 6px 6px #F24C4C' :'4px 4px #202020'};
+  ${(props) =>
+    !props.landing && !props.card ? `border-bottom: 2px solid #EEE;` : ""}
 
-    @media (max-width:800px){
-        font-size: ${props => props.landing && '50px'};
-    }
-
-    @media (max-width:500px){
-        ${props => props.landing && `
-            text-align:center;
-        `};
-    }
-
+  @media (max-width: 985px) {
+    font-size: ${(props) => props.landing && "60px"};
+  }
 `
